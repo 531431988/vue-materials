@@ -1,68 +1,19 @@
 {
-  "name": "@vui/left-image-right-login",
+  "name": "vui-left-image-right-login",
   "version": "1.0.0",
-  "description": "左图右登录框",
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
-  },
-  "files": [
-    "src/",
-    "build/",
-    "screenshot.png"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/531431988/vue-materials/blocks/left-image-right-login/dist/index.html"
-  },
-  "keywords": [
-    "vue",
-    "iview",
-    "login"
-  ],
+  "description": "左右布局带背景图的登录表单页",
   "author": {
     "name": "531431988",
     "email": "531431988@qq.com"
   },
   "license": "MIT",
-  "dependencies": {
-    "core-js": "^2.6.5",
-    "iview": "^3.4.2",
-    "vue": "^2.6.10"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.8.0",
-    "@vue/cli-plugin-eslint": "^3.8.0",
-    "@vue/cli-service": "^3.8.0",
-    "@vue/eslint-config-standard": "^4.0.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.6.10"
-  },
-  "homepage": "https://github.com/531431988/vue-materials/blocks/left-image-right-login/dist/index.html",
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "@vue/standard"
+  "blockConfig": {
+    "name": "login",
+    "title": "登录",
+    "tags": [
+      "登录页"
     ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+    "url": "https://github.com/531431988/vue-materials/blocks/left-image-right-login/dist/index.html",
+    "thumbnail": "https://github.com/531431988/vue-materials/blocks/left-image-right-login/screenshot.png"
+  }
 }
