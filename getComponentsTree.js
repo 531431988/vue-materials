@@ -37,6 +37,6 @@ url.forEach(item => {
   fs.readFile(item, 'utf8', function (err, data) {
     if (err) console.log(err)
     componentsTree.push(JSON.parse(data))
-    outPutFileJson('./componentsTree.json', componentsTree)
+    outPutFileJson('./public/componentsTree.json', componentsTree)
   })
 })

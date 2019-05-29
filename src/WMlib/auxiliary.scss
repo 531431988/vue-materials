@@ -1,0 +1,120 @@
+//辅助类
+//-----------------------------------------------------
+
+.tl {
+  text-align: left !important;
+}
+.tr {
+  text-align: right !important;
+}
+.tc {
+  text-align: center !important;
+}
+.tj {
+  text-align: justify;
+}
+.tn {
+  white-space: nowrap;
+}
+.b {
+  font-weight: 700;
+}
+
+//填充边距方法
+$list-padding-margin: (5, 10, 15, 20, 25, 30, 35, 40, 45, 50);
+//-----------------------------------------------------
+@mixin padding-margin($className, $attr) {
+  @each $i in $list-padding-margin {
+    .#{$className}#{$i} {
+      #{$attr}: ($i) * 1px;
+    }
+  }
+}
+//默认填充
+//-----------------------------------------------------
+@include padding-margin(pd, padding);
+@include padding-margin(pt, padding-top);
+@include padding-margin(pr, padding-right);
+@include padding-margin(pb, padding-bottom);
+@include padding-margin(pl, padding-left);
+
+//默认边距
+//-----------------------------------------------------
+@include padding-margin(mt, margin-top);
+@include padding-margin(mr, margin-right);
+@include padding-margin(mb, margin-bottom);
+@include padding-margin(ml, margin-left);
+@include padding-margin(mg, margin);
+
+//浮动
+//-----------------------------------------------------
+.clear {
+  &:before,
+  &:after {
+    display: table;
+  }
+  &:after {
+    content: '';
+    clear: both;
+  }
+}
+.fl,
+.fr {
+  display: inline;
+}
+.fr {
+  float: right;
+}
+.fl {
+  float: left;
+}
+
+//单行文字溢出省略号
+//-----------------------------------------------------
+@mixin ell($multi-line: false, $line-clamp: 0, $box-orient: initial) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @if $multi-line==true {
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: $line-clamp; // number行数
+    /*! autoprefixer: off */
+    -webkit-box-orient: $box-orient; //方向 vertical
+    /* autoprefixer: on */
+  } @else {
+    white-space: nowrap;
+    display: block;
+  }
+}
+
+.ell {
+  @include ell();
+}
+.ell-2 {
+  @include ell(true, 2, vertical);
+}
+.ell-3 {
+  @include ell(true, 3, vertical);
+}
+
+.scroll,
+.scroll-y,
+.scroll-x {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(51, 51, 51, 0.15);
+  }
+}
+.scroll {
+  overflow: auto;
+}
+.scroll-y {
+  overflow-y: auto;
+}
+.scroll-x {
+  overflow-x: auto;
+}
