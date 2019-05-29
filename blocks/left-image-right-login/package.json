@@ -1,0 +1,29 @@
+{
+  "name": "@vui/left-image-right-login",
+  "version": "1.0.0",
+  "description": "左图右登录框",
+  "files": [
+    "src/",
+    "build/",
+    "screenshot.png"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/531431988/vue-materials/tree/master/blocks/left-image-right-login"
+  },
+  "keywords": [
+    "vue",
+    "iview",
+    "login"
+  ],
+  "author": {
+    "name": "531431988",
+    "email": "531431988@qq.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "iview": "^3.4.2",
+    "vue": "^2.6.10"
+  },
+  "homepage": "https://unpkg.com/@vui/left-image-right-login/build/index.html"
+}
