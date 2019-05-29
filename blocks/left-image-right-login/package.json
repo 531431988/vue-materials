@@ -41,7 +41,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "vue-template-compiler": "^2.6.10"
   },
-  "homepage": "https://unpkg.com/@vui/left-image-right-login/build/index.html",
+  "homepage": "https://github.com/531431988/vue-materials/blocks/left-image-right-login/dist/index.html",
   "eslintConfig": {
     "root": true,
     "env": {
