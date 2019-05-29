@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { Layout, Header, Content, Footer, Row, Col, Button, LoadingBar, Card, Divider, Icon } from 'iview'
+import { Layout, Header, Content, Footer, Row, Col, Button, LoadingBar, Card, Divider, Icon, BackTop } from 'iview'
 import '../theme.less'
 
 const component = {
@@ -13,7 +13,8 @@ const component = {
   LoadingBar,
   Card,
   Divider,
-  Icon
+  Icon,
+  BackTop
 }
 Object.keys(component).forEach(key => {
   Vue.component(key, component[key])
