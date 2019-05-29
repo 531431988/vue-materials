@@ -25,6 +25,10 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "sass": "^1.18.0",
+    "sass-loader": "^7.1.0",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
@@ -50,7 +54,7 @@
     "> 1%",
     "last 2 versions"
   ],
-  "blockConfig": {
+  "other": {
     "name": "template",
     "title": "模版",
     "tags": [
