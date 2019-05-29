@@ -3,10 +3,12 @@
     <Header>
       <Row>
         <Col span="12">
-          <div>logo</div>
+          <h2>一个基于IVIEW UI框架的组件库</h2>
         </Col>
         <Col span="12" class="tr">
-          <Button type="text">按钮</Button>
+          <a href="https://github.com/531431988/vue-component-library" target="_blank">
+            <Icon type="logo-github" size="30"/>
+          </a>
         </Col>
       </Row>
     </Header>

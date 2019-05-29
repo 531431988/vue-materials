@@ -54,13 +54,14 @@
     "> 1%",
     "last 2 versions"
   ],
-  "other": {
+  "info": {
     "name": "template",
     "title": "模版",
     "tags": [
       "标签"
     ],
     "url": "https://531431988.github.io/vue-component-library/components/",
-    "thumbnail": "https://531431988.github.io/vue-component-library/components/"
+    "thumbnail": "https://531431988.github.io/vue-component-library/components/",
+    "source": "https://github.com/531431988/vue-component-library/tree/master/components/"
   }
 }
