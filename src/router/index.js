@@ -4,6 +4,7 @@ import routes from './routers'
 import { LoadingBar } from 'iview'
 Vue.use(Router)
 const router = new Router({
+  base: '/531431988.github.io/vue-component-library/dist',
   routes,
   mode: 'history'
 })

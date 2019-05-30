@@ -49,6 +49,7 @@ export default {
     }
   },
   created () {
+    console.log('我进来了')
     let tags = []
     this.$get('componentsTree.json').then(res => {
       console.log(res)
