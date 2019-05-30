@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "tree": "node getComponentsTree.js",
     "serve": "vue-cli-service serve && getComponentsTree.js",
     "build": "vue-cli-service build && getComponentsTree.js",
     "lint": "vue-cli-service lint"
