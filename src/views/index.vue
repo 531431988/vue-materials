@@ -11,13 +11,13 @@
         shape="circle"
         v-for="(item, index) in tags"
         :key="index"
-        @click="onClick(item)"
+        @click="onClick(item, index)"
       >{{item.label}} {{item.number ? item.number : ''}}</Button>
     </Card>
     <div class="pd20">
       <Row :gutter="20">
         <Col :xs="24" :sm="12" :md="8" :lg="6" v-for="(item, index) in list" :key="index">
-          <Card shadow class="list-card" :padding="0">
+          <Card shadow class="list-card mb15" :padding="0">
             <div class="tc">
               <img
                 width="100%"
@@ -97,16 +97,20 @@ export default {
   },
   methods: {
     // 筛选数据
-    onClick (item) {
+    onClick (item, index) {
       this.tags.map(child => child.checked = false)
       item.checked = !item.checked
-      this.list = []
-      this.allData.forEach(child => {
-        if (child.info.tags.indexOf(item.label) > -1) {
-          console.log(child)
-          this.list.push(child)
-        }
-      })
+      if (index) {
+        this.list = []
+        this.allData.forEach(child => {
+          if (child.info.tags.indexOf(item.label) > -1) {
+            console.log(child)
+            this.list.push(child)
+          }
+        })
+      } else {
+        this.list = this.allData
+      }
     }
   }
 
