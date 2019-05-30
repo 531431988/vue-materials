@@ -1,8 +1,8 @@
 <template>
-  <div class="error-page">
-    <div class="error-page-content">
+  <div class="vue-error-page">
+    <div class="vue-error-page-content">
       <img :src="src" :alt="code">
-      <div class="error-page-text">
+      <div class="vue-error-page-text">
         <h4>{{ code }}</h4>
         <h5>{{ desc }}</h5>
       </div>
@@ -47,45 +47,31 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.error-page {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  .error-page-content {
+.vue-error-page {
+  .vue-error-page-content {
     position: relative;
-    width: 40%;
+    width: 30%;
     margin: 5% auto;
     img {
       display: block;
       width: 100%;
       height: 100%;
     }
-    .error-page-text {
+    .vue-error-page-text {
       position: absolute;
       left: 0px;
       top: 0px;
       h4 {
-        position: absolute;
-        left: 0px;
-        top: 0px;
+        line-height: 1;
         font-size: 80px;
         font-weight: 700;
         color: #348eed;
       }
       h5 {
-        position: absolute;
-        width: 700px;
-        left: 0px;
-        top: 100px;
         font-size: 20px;
         font-weight: 700;
         color: #67647d;
       }
-    }
-    .back-btn-group {
-      position: absolute;
-      right: 0px;
-      bottom: 20px;
     }
   }
 }
