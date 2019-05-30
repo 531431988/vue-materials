@@ -1,4 +1,6 @@
 const path = require('path')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+process.env.VUE_APP_NAME = require('./package.json').name
 const resolve = dir => path.join(__dirname, dir)
 module.exports = {
   chainWebpack: config => {
@@ -15,9 +17,7 @@ module.exports = {
       })
       .end()
     // 添加别名
-    config.resolve.alias
-      .set('@', resolve('src')) // key,value自行定义，比如.set('@@', resolve('src/components'))
-      .set('_c', resolve('src/components'))
+    config.resolve.alias.set('@', resolve('src')).set('_c', resolve('src/components'))
   },
   css: {
     loaderOptions: {
@@ -39,5 +39,29 @@ module.exports = {
     }
   },
   publicPath: './',
-  productionSourceMap: false
+  productionSourceMap: false,
+  // 生产环境打包文件导出配置
+  outputDir: process.env.VUE_APP_NAME,
+  assetsDir: 'dist',
+  indexPath: './dist/index.html',
+  configureWebpack: config => {
+    if (process.env.NODE_ENV === 'production') {
+      config.plugins.push(
+        new CopyWebpackPlugin([
+          {
+            from: resolve('./src'),
+            to: './src/'
+          },
+          {
+            from: resolve('./*.json'),
+            to: './'
+          },
+          {
+            from: resolve('./*.md'),
+            to: './'
+          }
+        ])
+      )
+    }
+  }
 }
