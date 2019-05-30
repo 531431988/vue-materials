@@ -18,15 +18,24 @@
         <Col :xs="24" :sm="12" :md="8" :lg="6" v-for="(item, index) in list" :key="index">
           <Card shadow class="list-card" :padding="0">
             <div class="tc">
-              <img width="100%" :src="item.info.thumbnail">
+              <img
+                width="100%"
+                :src="`https://531431988.github.io/vue-component-library/components/${item.info.name}/thumbnail.png`"
+              >
               <Divider/>
               <div class="pb10">{{item.info.title}}</div>
             </div>
             <div class="toolbar tc">
-              <a :href="item.info.url" target="_blank">
+              <a
+                :href="`https://531431988.github.io/vue-component-library/components/${item.info.name}/dist/index.html`"
+                target="_blank"
+              >
                 <Button type="dashed" ghost class="mr20">预览</Button>
               </a>
-              <a :href="item.info.source" target="_blank">
+              <a
+                :href="`https://github.com/531431988/vue-component-library/tree/master/components/${item.info.name}`"
+                target="_blank"
+              >
                 <Button type="primary">查看代码</Button>
               </a>
             </div>
