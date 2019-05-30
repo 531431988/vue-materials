@@ -18,6 +18,6 @@ module.exports = {
       }
     }
   },
-  publicPath: './',
+  publicPath: process.env.NODE_ENV === 'development' ? '/' : '/531431988.github.io/vue-component-library/dist',
   productionSourceMap: false
 }
