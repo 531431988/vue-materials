@@ -12,7 +12,7 @@
         v-for="(item, index) in tags"
         :key="index"
         @click="onClick(item, index)"
-      >{{item.label}} {{item.number ? item.number : ''}}</Button>
+      >{{item.label}} {{item.number}}</Button>
     </Card>
     <div class="pd20">
       <Row :gutter="20">
@@ -91,7 +91,8 @@ export default {
       // })
       this.tags.unshift({
         label: '全部',
-        checked: true
+        checked: true,
+        number: this.allData.length
       })
     })
   },
