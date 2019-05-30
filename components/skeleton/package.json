@@ -1,7 +1,7 @@
 {
-  "name": "template",
+  "name": "skeleton",
   "version": "1.0.0",
-  "description": "template detail",
+  "description": "在需要等待加载内容的位置提供一个占位图",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -60,10 +60,11 @@
     "last 2 versions"
   ],
   "info": {
-    "name": "template",
-    "title": "模版",
+    "name": "加载占位图",
+    "title": "在需要等待加载内容的位置提供一个占位图",
     "tags": [
-      "标签"
+      "骨架屏",
+      "加载"
     ]
   }
 }

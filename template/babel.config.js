@@ -16,14 +16,5 @@ module.exports = {
       }
     ]
   ],
-  plugins: [
-    ...plugins,
-    [
-      'import',
-      {
-        libraryName: 'iview',
-        libraryDirectory: 'src/components'
-      }
-    ]
-  ]
+  plugins: [...plugins]
 }

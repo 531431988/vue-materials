@@ -38,5 +38,6 @@ url.forEach(item => {
     if (err) console.log(err)
     componentsTree.push(JSON.parse(data))
     outPutFileJson('./public/componentsTree.json', componentsTree)
+    outPutFileJson('./dist/componentsTree.json', componentsTree)
   })
 })

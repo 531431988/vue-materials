@@ -7,11 +7,11 @@
     <Card shadow>
       <Button
         class="mr10"
-        :type="item.checked ? 'primary' : 'default'"
+        :type="item.checked ? 'primary' : 'text'"
         shape="circle"
         v-for="(item, index) in tags"
         :key="index"
-      >{{item.label}}</Button>
+      >{{item.label}} {{item.number ? item.number : ''}}</Button>
     </Card>
     <div class="pd20">
       <Row :gutter="20">
