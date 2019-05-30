@@ -7,9 +7,5 @@ export default [
   {
     path: '/index',
     component: () => $import('index')
-  },
-  {
-    path: '/about',
-    component: () => $import('about')
   }
 ]

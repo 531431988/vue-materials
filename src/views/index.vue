@@ -11,6 +11,7 @@
         shape="circle"
         v-for="(item, index) in tags"
         :key="index"
+        @click="onClick(item)"
       >{{item.label}} {{item.number ? item.number : ''}}</Button>
     </Card>
     <div class="pd20">
@@ -54,6 +55,7 @@ export default {
   },
   data () {
     return {
+      allData: [],
       list: [],
       tags: []
     }
@@ -62,6 +64,7 @@ export default {
     let tags = []
     let reduce = null
     this.$get('componentsTree.json').then(res => {
+      this.allData = res
       this.list = res
       res.forEach(item => {
         tags = [...tags, ...item.info.tags]
@@ -91,6 +94,20 @@ export default {
         checked: true
       })
     })
+  },
+  methods: {
+    // 筛选数据
+    onClick (item) {
+      this.tags.map(child => child.checked = false)
+      item.checked = !item.checked
+      this.list = []
+      this.allData.forEach(child => {
+        if (child.info.tags.indexOf(item.label) > -1) {
+          console.log(child)
+          this.list.push(child)
+        }
+      })
+    }
   }
 
 }
