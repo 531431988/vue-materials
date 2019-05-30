@@ -1,7 +1,7 @@
 {
-  "name": "error",
+  "name": "error-404",
   "version": "1.0.0",
-  "description": "错误页",
+  "description": "404 错误提示",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -60,7 +60,7 @@
     "last 2 versions"
   ],
   "info": {
-    "name": "error",
+    "name": "error-404",
     "title": "404 错误提示",
     "tags": [
       "异常"
