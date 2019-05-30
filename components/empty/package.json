@@ -1,7 +1,7 @@
 {
-  "name": "template",
+  "name": "empty",
   "version": "1.0.0",
-  "description": "template detail",
+  "description": "空状态时的展示占位图",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -61,10 +61,11 @@
     "last 2 versions"
   ],
   "info": {
-    "name": "template",
-    "title": "模版",
+    "name": "empty",
+    "title": "空状态",
     "tags": [
-      "标签"
+      "异常",
+      "暂无数据"
     ]
   }
 }
