@@ -51,6 +51,7 @@ export default {
   created () {
     let tags = []
     this.$get('componentsTree.json').then(res => {
+      console.log(res)
       this.list = res
       res.forEach(item => {
         tags = [...tags, ...item.info.tags]

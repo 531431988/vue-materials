@@ -8,6 +8,6 @@ export default {
    */
   url: {
     dev: '//localhost:8080/',
-    pro: '//192.168.7.73:7072/'
+    pro: 'https://531431988.github.io/vue-component-library/dist/'
   }
 }
