@@ -31,12 +31,6 @@
     </Row>
   </div>
 </template>
-          </Empty>
-        </Card>
-      </Col>
-    </Row>
-  </div>
-</template>
 
 <script>
 import Empty from '_c/Empty'
