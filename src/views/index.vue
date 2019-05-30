@@ -49,21 +49,33 @@ export default {
     }
   },
   created () {
-    console.log('我进来了')
     let tags = []
+    let reduce = null
     this.$get('componentsTree.json').then(res => {
-      console.log(res)
       this.list = res
       res.forEach(item => {
         tags = [...tags, ...item.info.tags]
       })
-      tags = Array.from(new Set(tags))
-      tags.forEach(item => {
+      // 获取标签与次数
+      reduce = tags.reduce((item, index) => {
+        item[index] ? item[index]++ : item[index] = 1
+        return item
+      }, {})
+      for (let i in reduce) {
         this.tags.push({
-          label: item,
+          label: i,
+          number: reduce[i],
           checked: false
         })
-      })
+      }
+      // 生成去重后的tag标签
+      // tags = Array.from(new Set(tags))
+      // tags.forEach(item => {
+      //   this.tags.push({
+      //     label: item,
+      //     checked: false
+      //   })
+      // })
       this.tags.unshift({
         label: '全部',
         checked: true
