@@ -60,7 +60,7 @@
     "last 2 versions"
   ],
   "info": {
-    "name": "加载占位图",
+    "name": "skeleton",
     "title": "在需要等待加载内容的位置提供一个占位图",
     "tags": [
       "骨架屏",
