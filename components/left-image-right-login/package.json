@@ -1,5 +1,5 @@
 {
-  "name": "vui-left-image-right-login",
+  "name": "left-image-right-login",
   "version": "1.0.0",
   "description": "左右布局带背景图的登录表单页",
   "author": {
@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "info": {
-    "name": "vui-left-image-right-login",
+    "name": "left-image-right-login",
     "title": "登录",
     "tags": [
       "登录页",
