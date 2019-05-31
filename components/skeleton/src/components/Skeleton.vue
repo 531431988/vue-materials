@@ -1,13 +1,13 @@
 <template>
-  <div :class="`vue-skeleton ${active ? 'vue-skeleton-active' : ''}`">
+  <div :class="`vui-skeleton ${active ? 'vui-skeleton-active' : ''}`">
     <template v-if="!loading">
       <slot></slot>
     </template>
     <template v-else>
-      <Avatar class="vue-skeleton-avatar" size="large" v-if="avatar"/>
-      <div class="vue-skeleton-content">
-        <h3 class="vue-skeleton-title" style="width: 38%;"></h3>
-        <ul class="vue-skeleton-paragraph">
+      <Avatar class="vui-skeleton-avatar" size="large" v-if="avatar"/>
+      <div class="vui-skeleton-content">
+        <h3 class="vui-skeleton-title" style="width: 38%;"></h3>
+        <ul class="vui-skeleton-paragraph">
           <li></li>
           <li></li>
           <li style="width: 61%;"></li>
@@ -45,12 +45,12 @@ export default {
 </script>
 
 <style lang="less">
-.vue-skeleton {
+.vui-skeleton {
   display: table;
   width: 100%;
 
   // Avatar
-  .vue-skeleton-avatar {
+  .vui-skeleton-avatar {
     margin-right: 16px;
     display: inline-block;
     vertical-align: top;
@@ -61,18 +61,18 @@ export default {
     display: table-cell;
     vertical-align: top;
     width: 100%;
-    .vue-skeleton-title {
+    .vui-skeleton-title {
       margin-top: 16px;
       height: 16px;
       width: 100%;
       background: #f2f2f2;
 
-      + .vue-skeleton-paragraph {
+      + .vui-skeleton-paragraph {
         margin-top: 24px;
       }
     }
 
-    .vue-skeleton-paragraph {
+    .vui-skeleton-paragraph {
       > li {
         height: 16px;
         background: #f2f2f2;
@@ -90,18 +90,18 @@ export default {
     }
   }
 
-  &.vue-skeleton-active {
-    .vue-skeleton-title,
-    .vue-skeleton-paragraph > li,
-    .vue-skeleton-avatar {
+  &.vui-skeleton-active {
+    .vui-skeleton-title,
+    .vui-skeleton-paragraph > li,
+    .vui-skeleton-avatar {
       background: linear-gradient(90deg, #f2f2f2 25%, #e6e6e6 37%, #f2f2f2 63%);
-      animation: vue-skeleton-loading 1.4s ease infinite;
+      animation: vui-skeleton-loading 1.4s ease infinite;
       background-size: 400% 100%;
     }
   }
 }
 
-@keyframes vue-skeleton-loading {
+@keyframes vui-skeleton-loading {
   0% {
     background-position: 100% 50%;
   }

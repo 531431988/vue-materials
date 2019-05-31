@@ -1,8 +1,8 @@
 <template>
-  <div class="vue-error-page">
-    <div class="vue-error-page-content">
+  <div class="vui-error-page">
+    <div class="vui-error-page-content">
       <img :src="src" :alt="code">
-      <div class="vue-error-page-text">
+      <div class="vui-error-page-text">
         <h4>{{ code }}</h4>
         <h5>{{ desc }}</h5>
       </div>
@@ -47,8 +47,8 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.vue-error-page {
-  .vue-error-page-content {
+.vui-error-page {
+  .vui-error-page-content {
     position: relative;
     width: 30%;
     margin: 5% auto;
@@ -57,7 +57,7 @@ export default {
       width: 100%;
       height: 100%;
     }
-    .vue-error-page-text {
+    .vui-error-page-text {
       position: absolute;
       left: 0px;
       top: 0px;

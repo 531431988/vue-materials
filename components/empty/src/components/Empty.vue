@@ -1,5 +1,5 @@
 <template>
-  <div class="vue-empty">
+  <div class="vui-empty">
     <div v-if="$slots.default">
       <slot></slot>
     </div>
@@ -35,7 +35,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.vue-empty {
+.vui-empty {
   text-align: center;
   color: @text-color;
 }

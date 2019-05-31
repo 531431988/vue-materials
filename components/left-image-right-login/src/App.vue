@@ -2,7 +2,7 @@
   <div id="app">
     <Row type="flex">
       <Col span="16">
-        <div class="vue-login-left">
+        <div class="vui-login-left">
           <div
             style="display: flex; flex-direction: column; align-items: center; position: relative; z-index: 3;"
           >
@@ -13,7 +13,7 @@
         </div>
       </Col>
       <Col span="8">
-        <div class="vue-login-right">
+        <div class="vui-login-right">
           <Form ref="formInline" :model="formInline" :rules="ruleInline" style="width: 50%;">
             <h4 class="title">用户登录</h4>
             <FormItem prop="user">
@@ -33,7 +33,7 @@
                 long
                 @click="handleSubmit('formInline')"
                 size="large"
-                class="vue-login-button"
+                class="vui-login-button"
               >登录</Button>
               <div>
                 <a href="#" style="margin-right:15px">立即注册</a>
@@ -86,7 +86,7 @@ export default {
   position: relative;
   height: 100vh;
 }
-.vue-login {
+.vui-login {
   &-left {
     display: flex;
     flex-direction: column;
