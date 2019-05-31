@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import router from './router'
-import App from './App.vue'
 import './plugins/iview.js'
+import App from './App.vue'
 import api from '@/api/index'
 import './WMlib/WMlib.scss'
 
