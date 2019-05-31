@@ -1,6 +1,6 @@
 # react-materials
 
-VUE 物料（模板/区块/组件），基于 IVIEW 组件 vuecli3 脚手架 [在线预览](https://531431988.github.io/vue-component-library/dist/index.html#/index)
+VUE 物料（模板/区块/组件），基于 IVIEW 组件 vuecli3 脚手架 [在线预览](https://531431988.github.io/vue-component-library/dist/index.html)
 
 ---
 
