@@ -20,7 +20,7 @@
             <div class="tc">
               <img
                 width="100%"
-                style="max-height: 200px"
+                style="height: 200px"
                 :src="`https://531431988.github.io/vue-component-library/components/${item.info.name}/thumbnail.png`"
               >
               <Divider/>
