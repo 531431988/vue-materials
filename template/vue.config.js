@@ -38,7 +38,7 @@ module.exports = {
       patterns: [resolve('./src/theme.less')]
     }
   },
-  publicPath: '../',
+  publicPath: process.env.NODE_ENV === 'development' ? './' : '../',
   productionSourceMap: false,
   // 生产环境打包文件导出配置
   outputDir: process.env.VUE_APP_NAME,
