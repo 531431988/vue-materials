@@ -36,7 +36,14 @@ let url = findFileBySuffix('./components/', '.json')
 url.forEach(item => {
   fs.readFile(item, 'utf8', function (err, data) {
     if (err) console.log(err)
-    componentsTree.push(JSON.parse(data))
+    data = JSON.parse(data)
+    componentsTree.push({
+      name: data.name,
+      version: data.version,
+      description: data.description,
+      author: data.author,
+      info: data.info
+    })
     outPutFileJson('./public/componentsTree.json', componentsTree)
     outPutFileJson('./dist/componentsTree.json', componentsTree)
   })
