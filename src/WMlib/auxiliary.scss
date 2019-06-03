@@ -23,20 +23,27 @@
 //填充边距方法
 $list-padding-margin: (5, 10, 15, 20, 25, 30, 35, 40, 45, 50);
 //-----------------------------------------------------
-@mixin padding-margin($className, $attr) {
+@mixin padding-margin($className, $attr: '', $other: '') {
   @each $i in $list-padding-margin {
     .#{$className}#{$i} {
-      #{$attr}: ($i) * 1px;
+      @if ($attr != '') {
+        #{$attr}: ($i) * 1px;
+      }
+      @if ($other != '') {
+        #{$other}: ($i) * 1px;
+      }
     }
   }
 }
 //默认填充
 //-----------------------------------------------------
-@include padding-margin(pd, padding);
 @include padding-margin(pt, padding-top);
 @include padding-margin(pr, padding-right);
 @include padding-margin(pb, padding-bottom);
 @include padding-margin(pl, padding-left);
+@include padding-margin(px, padding-left, padding-right);
+@include padding-margin(py, padding-top, padding-bottom);
+@include padding-margin(pd, padding);
 
 //默认边距
 //-----------------------------------------------------
@@ -44,6 +51,8 @@ $list-padding-margin: (5, 10, 15, 20, 25, 30, 35, 40, 45, 50);
 @include padding-margin(mr, margin-right);
 @include padding-margin(mb, margin-bottom);
 @include padding-margin(ml, margin-left);
+@include padding-margin(mx, margin-left, margin-right);
+@include padding-margin(my, margin-top, margin-bottom);
 @include padding-margin(mg, margin);
 
 //浮动
