@@ -1,7 +1,7 @@
-# [quill 富文本编辑器](https://quilljs.com)
+# [vue-count-up](https://quilljs.com)
 
-简介：基于 vue-quill-editor 的富文本编辑器。
+简介：基于[countUp.js](https://github.com/inorganik/countUp.js)
 
 ---
 
-![截图](https://531431988.github.io/vue-component-library/components/loading/thumbnail.png)
+![截图](https://531431988.github.io/vue-component-library/components/vue-count-up/thumbnail.png)
