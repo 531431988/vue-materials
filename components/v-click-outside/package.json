@@ -1,0 +1,72 @@
+{
+  "name": "v-click-outside",
+  "version": "1.0.0",
+  "description": "谁被点击了",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "author": {
+    "name": "531431988",
+    "email": "531431988@qq.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "core-js": "^2.6.5",
+    "countup": "^1.8.2",
+    "iview": "^3.4.2",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-eslint": "^3.8.0",
+    "@vue/cli-service": "^3.8.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "iview-loader": "^1.2.2",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
+    "mockjs": "^1.0.1-beta3",
+    "sass": "^1.18.0",
+    "sass-loader": "^7.1.0",
+    "style-resources-loader": "^1.2.1",
+    "vue-cli-plugin-style-resources-loader": "^0.1.3",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/standard"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "info": {
+    "name": "v-click-outside",
+    "title": "谁被点击了",
+    "tags": [
+      "其他",
+      "指令"
+    ]
+  }
+}
