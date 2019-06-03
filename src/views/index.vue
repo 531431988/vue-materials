@@ -14,9 +14,9 @@
       >{{item.label}} {{item.number}}</Button>
     </Card>
     <div class="pd20">
-      <Row :gutter="20">
+      <Row :gutter="24">
         <Col :xs="24" :sm="12" :md="8" :lg="6" v-for="(item, index) in list" :key="index">
-          <Card shadow class="list-card mb15" :padding="0">
+          <Card shadow class="list-card mb20" :padding="0">
             <div class="tc">
               <img
                 width="100%"
