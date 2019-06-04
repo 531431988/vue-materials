@@ -1,7 +1,7 @@
 {
-  "name": "vue-countdown",
+  "name": "vue-full-calendar",
   "version": "1.0.0",
-  "description": "倒计时组件",
+  "description": "按照日历形式展示数据的容器",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -13,11 +13,11 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@chenfengyuan/vue-countdown": "^1.1.2",
     "axios": "^0.18.0",
     "core-js": "^2.6.5",
     "iview": "^3.4.2",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-lunar-full-calendar": "^1.2.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",
@@ -62,13 +62,10 @@
     "last 2 versions"
   ],
   "info": {
-    "name": "vue-countdown",
-    "title": "倒计时组件",
+    "name": "vue-full-calendar",
+    "title": "按照日历形式展示数据的容器",
     "tags": [
-      "其他",
       "表单",
-      "特效",
-      "数字",
       "插件"
     ]
   }
