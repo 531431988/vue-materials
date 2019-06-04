@@ -15,8 +15,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "core-js": "^2.6.5",
-    "countup": "^1.8.2",
     "iview": "^3.4.2",
+    "v-click-outside-x": "^4.0.4",
     "vue": "^2.6.10"
   },
   "devDependencies": {
