@@ -1,7 +1,7 @@
 {
-  "name": "user-info-card",
+  "name": "vue-aplayer",
   "version": "1.0.0",
-  "description": "用于展示用户信息的卡片",
+  "description": "音乐播放器",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -15,9 +15,9 @@
   "dependencies": {
     "axios": "^0.18.0",
     "core-js": "^2.6.5",
-    "countup": "^1.8.2",
     "iview": "^3.4.2",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-aplayer": "^1.6.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",
@@ -62,11 +62,11 @@
     "last 2 versions"
   ],
   "info": {
-    "name": "user-info-card",
-    "title": "用户信息卡片",
+    "name": "vue-aplayer",
+    "title": "音乐播放器",
     "tags": [
-      "排版",
-      "列表"
+      "播放器",
+      "插件"
     ]
   }
 }
