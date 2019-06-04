@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="banner tc">
-      <h1>一个基于IVIEW UI框架的海量组件库</h1>
+      <h1>一个基于Ant Design框架的海量组件库</h1>
       <p class="mt10">快速组合搭建应用，减少重复的开发，提升效率</p>
     </div>
     <Card shadow class="tags">

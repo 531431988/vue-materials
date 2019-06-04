@@ -5,7 +5,7 @@
         <Col span="20">
           <Row type="flex" align="middle">
             <img src="../assets/logo.svg" width="40">
-            <h3>IVIEW UI 组件库</h3>
+            <h3>Ant Design UI 组件库</h3>
           </Row>
         </Col>
         <Col span="4" class="tr">
