@@ -1,6 +1,7 @@
 # vue-component-library
 
-VUE 物料（模板/区块/组件），基于 IVIEW 组件 vuecli3 脚手架 [在线预览](https://531431988.github.io/vue-component-library/dist/index.html)
+基于 IVIEW 组件 vuecli3 脚手架的 VUE 仓库（模板/区块/组件） [在线预览](https://531431988.github.io/vue-component-library/dist/index.html)
+仅适用于菜鸡项目快速开发使用，对设计要求不高的项目可减少大量重复代码
 
 ---
 

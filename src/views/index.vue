@@ -98,13 +98,14 @@ export default {
   methods: {
     // 筛选数据
     onClick (item, index) {
-      this.tags.map(child => child.checked = false)
+      this.tags.map(child => {
+        child.checked = false
+      })
       item.checked = !item.checked
       if (index) {
         this.list = []
         this.allData.forEach(child => {
           if (child.info.tags.indexOf(item.label) > -1) {
-            console.log(child)
             this.list.push(child)
           }
         })
@@ -158,4 +159,3 @@ export default {
   }
 }
 </style>
-
