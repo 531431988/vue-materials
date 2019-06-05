@@ -1,34 +1,34 @@
 <template>
   <div id="app">
-    <Row :gutter="24">
-      <Col span="12" class="mb15">
-        <Card title="title方式">
+    <a-row :gutter="24">
+      <a-col span="12" class="mb15">
+        <a-card title="title方式">
           <Empty title="暂无数据"/>
-        </Card>
-      </Col>
-      <Col span="12" class="mb15">
-        <Card title="slot方式">
+        </a-card>
+      </a-col>
+      <a-col span="12" class="mb15">
+        <a-card title="slot方式">
           <Empty>
             <template slot="text">暂无数据</template>
           </Empty>
-        </Card>
-      </Col>
-      <Col span="12" class="mb15">
-        <Card title="简洁版">
+        </a-card>
+      </a-col>
+      <a-col span="12" class="mb15">
+        <a-card title="简洁版">
           <Empty type="2">
             <template slot="text">暂无数据</template>
           </Empty>
-        </Card>
-      </Col>
-      <Col span="12" class="mb15">
-        <Card title="自定义图片">
+        </a-card>
+      </a-col>
+      <a-col span="12" class="mb15">
+        <a-card title="自定义图片">
           <Empty>
-            <Icon type="ios-happy-outline" size="48"/>
+            <a-icon type="smile" style="font-size: 42px;margin-bottom: 10px"/>
             <template slot="text">自定义文字提示</template>
           </Empty>
-        </Card>
-      </Col>
-    </Row>
+        </a-card>
+      </a-col>
+    </a-row>
   </div>
 </template>
 
