@@ -1,6 +1,6 @@
 import axios from 'axios'
 import config from '../config'
-// import { Notice, LoadingBar } from 'iview'
+import { Notification } from 'ant-design-vue'
 
 const baseUrl = process.env.NODE_ENV === 'development' ? config.url.dev : config.url.pro
 const codeMessage = {
@@ -31,9 +31,9 @@ axios.interceptors.request.use(
   },
   error => {
     // LoadingBar.finish()
-    // Notice.error({
-    //   title: '加载超时'
-    // })
+    Notification.error({
+      title: '加载超时'
+    })
     return Promise.reject(error)
   }
 )
@@ -45,9 +45,9 @@ axios.interceptors.response.use(
   },
   error => {
     // LoadingBar.finish()
-    // Notice.error({
-    //   title: '加载失败'
-    // })
+    Notification.error({
+      title: '加载失败'
+    })
     return Promise.resolve(error.response)
   }
 )
@@ -69,10 +69,10 @@ const checkStatus = res => {
   if (res.status === 200 || res.status === 304) {
     return data
   } else {
-    // Notice.error({
-    //   message: `请求错误 ${status}: ${config.url}`,
-    //   description: codeMessage[status]
-    // })
+    Notification.error({
+      message: `请求错误 ${status}: ${config.url}`,
+      description: codeMessage[status]
+    })
   }
 }
 // 过滤URL

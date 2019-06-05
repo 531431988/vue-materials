@@ -1,7 +1,7 @@
 <template>
   <div>
     <a-layout>
-      <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
+      <a-layout-header>
         <a-row>
           <a-col :span="20">
             <a-row type="flex" align="middle">
@@ -29,11 +29,12 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .ant-layout-header {
   position: fixed;
   width: 100%;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   z-index: 99;
+  background: #fff;
 }
 </style>
