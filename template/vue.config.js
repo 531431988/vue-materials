@@ -12,6 +12,9 @@ module.exports = {
   css: {
     loaderOptions: {
       less: {
+        modifyVars: {
+          'primary-color': '#1DA57A'
+        },
         // 启用内联JavaScript
         javascriptEnabled: true
       }

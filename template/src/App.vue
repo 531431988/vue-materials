@@ -1,5 +1,7 @@
 <template>
-  <div id="app">模版</div>
+  <div id="app">
+    <a-button>模版</a-button>
+  </div>
 </template>
 
 <script>
