@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Row type="flex">
-      <Col span="16">
+    <a-row type="flex">
+      <a-col span="16">
         <div class="vui-login-left">
           <div
             style="display: flex; flex-direction: column; align-items: center; position: relative; z-index: 3;"
@@ -11,39 +11,48 @@
           </div>
           <div class="mask"></div>
         </div>
-      </Col>
-      <Col span="8">
+      </a-col>
+      <a-col span="8">
         <div class="vui-login-right">
-          <Form ref="formInline" :model="formInline" :rules="ruleInline" style="width: 50%;">
+          <a-form class="login-form" :form="form" @submit="handleSubmit" style="width: 50%;">
             <h4 class="title">用户登录</h4>
-            <FormItem prop="user">
-              <Input type="text" v-model="formInline.user" placeholder="请输入用户名" size="large">
-                <Icon type="ios-person-outline" slot="prepend"></Icon>
-              </Input>
-            </FormItem>
-            <FormItem prop="password">
-              <Input type="password" v-model="formInline.password" placeholder="请输入密码" size="large">
-                <Icon type="ios-lock-outline" slot="prepend"></Icon>
-              </Input>
-            </FormItem>
-            <FormItem style="text-align:center">
-              <Button
-                type="primary"
-                shape="circle"
-                long
-                @click="handleSubmit('formInline')"
+            <a-form-item>
+              <a-input
+                type="text"
+                placeholder="请输入用户名"
                 size="large"
+                v-decorator="ruleInline.username"
+              >
+                <a-icon type="user" slot="prefix"/>
+              </a-input>
+            </a-form-item>
+            <a-form-item>
+              <a-input
+                v-decorator="ruleInline.password"
+                type="password"
+                placeholder="请输入密码"
+                size="large"
+              >
+                <a-icon type="lock" slot="prefix"/>
+              </a-input>
+            </a-form-item>
+            <a-form-item style="text-align:center">
+              <a-button
+                type="primary"
+                long
+                size="large"
+                html-type="submit"
                 class="vui-login-button"
-              >登录</Button>
+              >登录</a-button>
               <div>
                 <a href="#" style="margin-right:15px">立即注册</a>
                 <a href="#">找回密码</a>
               </div>
-            </FormItem>
-          </Form>
+            </a-form-item>
+          </a-form>
         </div>
-      </Col>
-    </Row>
+      </a-col>
+    </a-row>
   </div>
 </template>
 
@@ -53,28 +62,38 @@ export default {
   },
   data () {
     return {
-      formInline: {
-        user: '',
-        password: ''
-      },
       ruleInline: {
-        user: [
-          { required: true, message: '请输入用户名', trigger: 'blur' }
+        username: [
+          'username',
+          {
+            validateTrigger: ['change', 'blur'],
+            rules: [{ required: true, whitespace: true, message: '请输入用户名' }]
+          }
         ],
         password: [
-          { required: true, message: '请输入密码', trigger: 'blur' },
-          { type: 'string', min: 6, message: '密码最少为6位', trigger: 'blur' }
+          'password',
+          {
+            validateTrigger: ['change', 'blur'],
+            rules: [
+              { required: true, message: '请输入密码' },
+              { type: 'string', min: 6, message: '密码最少为6位' }
+            ]
+          }
         ]
       }
     }
   },
+  beforeCreate () {
+    this.form = this.$form.createForm(this)
+  },
   methods: {
-    handleSubmit (name) {
-      this.$refs[name].validate((valid) => {
-        if (valid) {
-          this.$Message.success('验证成功')
+    handleSubmit (e) {
+      e.preventDefault()
+      this.form.validateFields((err, values) => {
+        if (!err) {
+          this.$message.success('验证成功')
         } else {
-          this.$Message.error('验证失败')
+          this.$message.error('验证失败')
         }
       })
     }
