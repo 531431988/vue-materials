@@ -4,7 +4,7 @@
       <h1>一个基于Ant Design框架的海量组件库</h1>
       <p class="mt10">快速组合搭建应用，减少重复的开发，提升效率</p>
     </div>
-    <Card shadow class="tags">
+    <!-- <Card shadow class="tags">
       <Button
         :type="item.checked ? 'primary' : 'text'"
         shape="circle"
@@ -44,7 +44,7 @@
         </Col>
       </Row>
     </div>
-    <BackTop></BackTop>
+    <BackTop></BackTop>-->
   </div>
 </template>
 

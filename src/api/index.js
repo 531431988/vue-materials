@@ -1,6 +1,6 @@
 import axios from 'axios'
 import config from '../config'
-import { Notice, LoadingBar } from 'iview'
+// import { Notice, LoadingBar } from 'iview'
 
 const baseUrl = process.env.NODE_ENV === 'development' ? config.url.dev : config.url.pro
 const codeMessage = {
@@ -26,28 +26,28 @@ axios.defaults.timeout = 10000
 axios.defaults.withCredentials = true
 axios.interceptors.request.use(
   config => {
-    LoadingBar.start()
+    // LoadingBar.start()
     return config
   },
   error => {
-    LoadingBar.finish()
-    Notice.error({
-      title: '加载超时'
-    })
+    // LoadingBar.finish()
+    // Notice.error({
+    //   title: '加载超时'
+    // })
     return Promise.reject(error)
   }
 )
 // 添加响应拦截器
 axios.interceptors.response.use(
   response => {
-    LoadingBar.finish()
+    // LoadingBar.finish()
     return response
   },
   error => {
-    LoadingBar.finish()
-    Notice.error({
-      title: '加载失败'
-    })
+    // LoadingBar.finish()
+    // Notice.error({
+    //   title: '加载失败'
+    // })
     return Promise.resolve(error.response)
   }
 )
@@ -69,10 +69,10 @@ const checkStatus = res => {
   if (res.status === 200 || res.status === 304) {
     return data
   } else {
-    Notice.error({
-      message: `请求错误 ${status}: ${config.url}`,
-      description: codeMessage[status]
-    })
+    // Notice.error({
+    //   message: `请求错误 ${status}: ${config.url}`,
+    //   description: codeMessage[status]
+    // })
   }
 }
 // 过滤URL

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import routes from './routers'
-import { LoadingBar } from 'iview'
+// import { LoadingBar } from 'iview'
 Vue.use(Router)
 const router = new Router({
   routes,
@@ -9,7 +9,7 @@ const router = new Router({
 })
 
 router.afterEach(to => {
-  LoadingBar.finish()
+  // LoadingBar.finish()
   window.scrollTo(0, 0)
 })
 
