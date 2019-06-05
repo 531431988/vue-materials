@@ -22,7 +22,7 @@ module.exports = {
       'import',
       {
         libraryName: 'ant-design-vue',
-        libraryDirectory: 'es',
+        libraryDirectory: 'lib',
         style: true
       }
     ]

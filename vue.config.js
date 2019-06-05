@@ -3,7 +3,7 @@ const resolve = dir => path.join(__dirname, dir)
 module.exports = {
   chainWebpack: config => {
     // 修复HMR
-    config.resolve.symlinks(true)
+    // config.resolve.symlinks(true)
     // 添加别名
     config.resolve.alias
       .set('@', resolve('src')) // key,value自行定义，比如.set('@@', resolve('src/components'))
