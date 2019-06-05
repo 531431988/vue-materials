@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <Row :gutter="24">
-      <Col span="24">
-        <Card title="谁被点击了">
-          <Button @click="onClick" v-click-outside="clickoutside">{{message}}</Button>
+    <a-row :gutter="24">
+      <a-col span="24">
+        <a-card title="谁被点击了">
+          <a-button @click="onClick" v-click-outside="clickoutside">{{message}}</a-button>
           <h2>我是一个h2</h2>
           <p>我是一个P元素</p>
           <div>我是一个DIV元素</div>
-        </Card>
-      </Col>
-    </Row>
+        </a-card>
+      </a-col>
+    </a-row>
   </div>
 </template>
 
