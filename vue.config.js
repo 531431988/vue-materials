@@ -8,6 +8,7 @@ module.exports = {
     config.resolve.alias
       .set('@', resolve('src')) // key,value自行定义，比如.set('@@', resolve('src/components'))
       .set('_c', resolve('src/components'))
+      .set('@ant-design/icons/lib/dist$', resolve('./icons.js'))
   },
 
   css: {
@@ -31,6 +32,9 @@ module.exports = {
     'style-resources-loader': {
       preProcessor: 'less',
       patterns: [resolve('./src/theme.less')]
+    },
+    webpackBundleAnalyzer: {
+      openAnalyzer: true
     }
   },
 

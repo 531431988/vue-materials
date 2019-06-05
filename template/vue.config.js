@@ -7,7 +7,10 @@ module.exports = {
     // 修复HMR
     config.resolve.symlinks(true)
     // 添加别名
-    config.resolve.alias.set('@', resolve('src')).set('_c', resolve('src/components'))
+    config.resolve.alias
+      .set('@', resolve('src'))
+      .set('_c', resolve('src/components'))
+      .set('@ant-design/icons/lib/dist$', resolve('./icons.js'))
   },
   css: {
     loaderOptions: {
@@ -29,6 +32,9 @@ module.exports = {
     'style-resources-loader': {
       preProcessor: 'less',
       patterns: [resolve('./src/theme.less')]
+    },
+    webpackBundleAnalyzer: {
+      openAnalyzer: true
     }
   },
   publicPath: process.env.NODE_ENV === 'development' ? './' : '../',
