@@ -100,7 +100,7 @@ export default {
   h6 {
     margin-top: 0;
     margin-bottom: 0.5em;
-    color: @title-color;
+    color: @text-color;
     font-weight: 400;
   }
   .vui-title {
