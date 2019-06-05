@@ -42,7 +42,7 @@
       <button class="ql-link"></button>
       <button class="ql-video"></button>
       <button id="custom-button">
-        <Icon type="md-image" size="18"></Icon>
+        <a-icon type="picture"></a-icon>
       </button>
     </div>
     <quill-editor
@@ -83,15 +83,15 @@ export default {
       console.log('编辑器失去焦点', quill)
     },
     onEditorFocus (quill) {
-      this.$Message.info('编辑器获得焦点')
+      this.$message.info('编辑器获得焦点')
       console.log('编辑器获得焦点', quill)
     },
     onEditorReady (quill) {
-      this.$Message.info('编辑器准备就绪')
+      this.$message.info('编辑器准备就绪')
       console.log('编辑器准备就绪', quill)
     },
     onEditorChange ({ quill, html, text }) {
-      this.$Message.info('编辑器数据改变')
+      this.$message.info('编辑器数据改变')
       console.log('编辑器数据改变', quill, html, text)
       this.content = html
     }
@@ -102,11 +102,11 @@ export default {
     }
   },
   mounted () {
-    this.$Message.info('这是当前的Quill实例对象')
+    this.$message.info('这是当前的Quill实例对象')
     console.log('这是当前的Quill实例对象', this.editor)
     var customButton = document.querySelector('#custom-button')
     customButton.addEventListener('click', () => {
-      this.$Message.info('Clicked')
+      this.$message.info('Clicked')
     })
   }
 }
