@@ -52,11 +52,15 @@ module.exports = {
             to: './src/'
           },
           {
-            from: resolve('./*.json'),
+            from: resolve('./package.json'),
             to: './'
           },
           {
-            from: resolve('./*.md'),
+            from: resolve('./thumbnail.png'),
+            to: './'
+          },
+          {
+            from: resolve('./README.md'),
             to: './'
           }
         ])
