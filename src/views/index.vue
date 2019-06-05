@@ -1,50 +1,51 @@
 <template>
   <div>
     <div class="banner tc">
-      <h1>一个基于IVIEW UI框架的海量组件库</h1>
+      <h1>一个基于Ant Design框架的海量组件库</h1>
       <p class="mt10">快速组合搭建应用，减少重复的开发，提升效率</p>
     </div>
-    <Card shadow class="tags">
-      <Button
-        :type="item.checked ? 'primary' : 'text'"
-        shape="circle"
+    <a-card class="tags" :bordered="false">
+      <a-button
+        :type="item.checked ? 'primary' : 'dashed'"
         v-for="(item, index) in tags"
         :key="index"
         @click="onClick(item, index)"
-      >{{item.label}} {{item.number}}</Button>
-    </Card>
+      >{{item.label}} {{item.number}}</a-button>
+    </a-card>
     <div class="pd20">
-      <Row :gutter="24">
-        <Col :xs="24" :sm="12" :md="8" :lg="6" v-for="(item, index) in list" :key="index">
-          <Card shadow class="list-card mb20" :padding="0">
-            <div class="tc">
+      <a-row :gutter="24">
+        <a-col :xs="24" :sm="12" :md="8" :lg="6" v-for="(item, index) in list" :key="index">
+          <a-card class="list-card" hoverable :loading="loading" :bodyStyle="{padding: '10px'}">
+            <template slot="cover">
               <img
                 width="100%"
                 style="height: 200px"
                 :src="`https://531431988.github.io/vue-component-library/components/${item.info.name}/thumbnail.png`"
               >
-              <Divider/>
-              <div class="pb10">{{item.info.title}}</div>
+              <a-divider/>
+            </template>
+            <div class="tc">
+              <div>{{item.info.title}}</div>
             </div>
             <div class="toolbar tc">
               <a
                 :href="`https://531431988.github.io/vue-component-library/components/${item.info.name}/dist/index.html`"
                 target="_blank"
               >
-                <Button type="dashed" ghost class="mr20">预览</Button>
+                <a-button type="dashed" ghost class="mr20">预览</a-button>
               </a>
               <a
                 :href="`https://github.com/531431988/vue-component-library/tree/master/components/${item.info.name}`"
                 target="_blank"
               >
-                <Button type="primary">查看代码</Button>
+                <a-button type="primary">查看代码</a-button>
               </a>
             </div>
-          </Card>
-        </Col>
-      </Row>
+          </a-card>
+        </a-col>
+      </a-row>
     </div>
-    <BackTop></BackTop>
+    <a-back-top/>
   </div>
 </template>
 
@@ -56,7 +57,8 @@ export default {
     return {
       allData: [],
       list: [],
-      tags: []
+      tags: [],
+      loading: true
     }
   },
   created () {
@@ -93,6 +95,7 @@ export default {
         checked: true,
         number: this.allData.length
       })
+      this.loading = false
     })
   },
   methods: {
@@ -128,6 +131,7 @@ export default {
   overflow: hidden;
   border-radius: 0;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
   .toolbar {
     transition: all 0.3s;
     background: rgba(0, 0, 0, 0.5);
@@ -146,7 +150,7 @@ export default {
 }
 .tags {
   border-radius: 0;
-  .ivu-btn {
+  .ant-btn {
     margin-bottom: 10px;
     margin-right: 10px;
   }
@@ -154,8 +158,8 @@ export default {
 </style>
 <style lang="less">
 .list-card {
-  .ivu-divider {
-    margin: 10px 0;
+  .ant-divider {
+    margin: 0;
   }
 }
 </style>

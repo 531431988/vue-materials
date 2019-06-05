@@ -6,22 +6,18 @@ module.exports = {
   chainWebpack: config => {
     // 修复HMR
     config.resolve.symlinks(true)
-    // 配置IVIEW前缀
-    config.module
-      .rule('vue')
-      .test(/\.vue$/)
-      .use('view-loader')
-      .loader('iview-loader')
-      .options({
-        prefix: false
-      })
-      .end()
     // 添加别名
-    config.resolve.alias.set('@', resolve('src')).set('_c', resolve('src/components'))
+    config.resolve.alias
+      .set('@', resolve('src'))
+      .set('_c', resolve('src/components'))
+      .set('@ant-design/icons/lib/dist$', resolve('./icons.js'))
   },
   css: {
     loaderOptions: {
       less: {
+        modifyVars: {
+          'primary-color': '#1DA57A'
+        },
         // 启用内联JavaScript
         javascriptEnabled: true
       }
@@ -36,6 +32,9 @@ module.exports = {
     'style-resources-loader': {
       preProcessor: 'less',
       patterns: [resolve('./src/theme.less')]
+    },
+    webpackBundleAnalyzer: {
+      openAnalyzer: true
     }
   },
   publicPath: process.env.NODE_ENV === 'development' ? './' : '../',
@@ -53,11 +52,15 @@ module.exports = {
             to: './src/'
           },
           {
-            from: resolve('./*.json'),
+            from: resolve('./package.json'),
             to: './'
           },
           {
-            from: resolve('./*.md'),
+            from: resolve('./thumbnail.png'),
+            to: './'
+          },
+          {
+            from: resolve('./README.md'),
             to: './'
           }
         ])

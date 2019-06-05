@@ -1,7 +1,7 @@
 {
-  "name": "template",
+  "name": "chip",
   "version": "1.0.0",
-  "description": "template detail",
+  "description": "展示简洁的信息",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -13,9 +13,9 @@
   },
   "license": "MIT",
   "dependencies": {
+    "ant-design-vue": "^1.3.9",
     "axios": "^0.18.0",
     "core-js": "^2.6.5",
-    "iview": "^3.4.2",
     "vue": "^2.6.10"
   },
   "devDependencies": {
@@ -27,7 +27,6 @@
     "babel-plugin-transform-remove-console": "^6.9.4",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "iview-loader": "^1.2.2",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "mockjs": "^1.0.1-beta3",
@@ -61,10 +60,11 @@
     "last 2 versions"
   ],
   "info": {
-    "name": "template",
-    "title": "模版",
+    "name": "chip",
+    "title": "标签展示",
     "tags": [
-      "标签"
+      "插件",
+      "表单"
     ]
   }
 }

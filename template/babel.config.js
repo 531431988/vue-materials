@@ -16,5 +16,15 @@ module.exports = {
       }
     ]
   ],
-  plugins: [...plugins]
+  plugins: [
+    ...plugins,
+    [
+      'import',
+      {
+        libraryName: 'ant-design-vue',
+        libraryDirectory: 'es',
+        style: true
+      }
+    ]
+  ]
 }
