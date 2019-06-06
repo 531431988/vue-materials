@@ -31,6 +31,9 @@ module.exports = {
     // 为预处理器的 loader 传递自定义选项。比如传递给 sass-loader 时，使用 `{ sass: { ... } }`。
     loaderOptions: {
       less: {
+        modifyVars: {
+          'primary-color': '#1890ff'
+        },
         // 启用内联JavaScript
         javascriptEnabled: true
       }

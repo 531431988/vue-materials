@@ -27,11 +27,12 @@
   </Layout>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .ivu-layout-header {
   position: fixed;
   width: 100%;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   z-index: 99;
+  background: #fff;
 }
 </style>
