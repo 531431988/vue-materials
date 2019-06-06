@@ -1,7 +1,7 @@
 {
-  "name": "v-resize",
+  "name": "template",
   "version": "1.0.0",
-  "description": "监听窗口变化",
+  "description": "组件描述",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -60,11 +60,10 @@
     "last 2 versions"
   ],
   "info": {
-    "name": "v-resize",
-    "title": "监听窗口变化",
+    "name": "template",
+    "title": "组件模板",
     "tags": [
-      "其他",
-      "指令"
+      "其他"
     ]
   }
 }
