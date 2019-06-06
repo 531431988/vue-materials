@@ -4,7 +4,28 @@
       <h1>一个基于Ant Design框架的海量组件库</h1>
       <p class="mt10">快速组合搭建应用，减少重复的开发，提升效率</p>
     </div>
-    <a-card class="tags" :bordered="false">
+    <a-button
+      type="primary"
+      icon="bars"
+      @click="visible  = true"
+      v-if="width < 768"
+      style="position:fixed; right: 16px;top:16px;z-index:99"
+    ></a-button>
+    <a-drawer
+      v-if="width < 768"
+      placement="left"
+      :closable="false"
+      :visible="visible"
+      @close="visible = false"
+    >
+      <a-button
+        :type="item.checked ? 'primary' : 'dashed'"
+        v-for="(item, index) in tags"
+        :key="index"
+        @click="onClick(item, index)"
+      >{{item.label}} {{item.number}}</a-button>
+    </a-drawer>
+    <a-card class="tags" :bordered="false" v-else>
       <a-button
         :type="item.checked ? 'primary' : 'dashed'"
         v-for="(item, index) in tags"
@@ -64,7 +85,9 @@ export default {
       allData: [],
       list: [],
       tags: [],
-      loading: true
+      loading: true,
+      visible: false,
+      width: window.innerWidth
     }
   },
   created () {
@@ -122,6 +145,11 @@ export default {
         this.list = this.allData
       }
     }
+  },
+  mounted () {
+    window.onresize = () => {
+      this.width = window.innerWidth
+    }
   }
 
 }
@@ -177,6 +205,7 @@ export default {
   }
   svg {
     width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -192,7 +221,8 @@ export default {
     }
   }
 }
-.tags {
+.tags,
+.ant-drawer {
   border-radius: 0;
   .ant-btn {
     margin-bottom: 10px;
