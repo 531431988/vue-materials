@@ -146,6 +146,10 @@ export default {
     width: 100%;
     left: 0;
     right: 0;
+    a {
+      position: relative;
+      z-index: 10;
+    }
   }
   &:hover {
     .toolbar {
