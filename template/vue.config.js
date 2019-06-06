@@ -22,9 +22,9 @@ module.exports = {
   css: {
     loaderOptions: {
       less: {
-        modifyVars: {
-          'primary-color': '#1890ff'
-        },
+        // modifyVars: {
+        //   'primary-color': '#1890ff'
+        // },
         // 启用内联JavaScript
         javascriptEnabled: true
       }
