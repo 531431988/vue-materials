@@ -1,7 +1,7 @@
 {
-  "name": "template",
+  "name": "vue-waterfall",
   "version": "1.0.0",
-  "description": "组件描述",
+  "description": "瀑布流",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -16,7 +16,8 @@
     "ant-design-vue": "^1.3.9",
     "axios": "^0.18.0",
     "core-js": "^2.6.5",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-waterfall": "^1.0.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",
@@ -60,10 +61,12 @@
     "last 2 versions"
   ],
   "info": {
-    "name": "template",
-    "title": "组件模板",
+    "name": "vue-waterfall",
+    "title": "瀑布流",
     "tags": [
-      "其他"
+      "插件",
+      "特效",
+      "排版"
     ]
   }
 }

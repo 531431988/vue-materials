@@ -1,7 +1,7 @@
 {
-  "name": "template",
+  "name": "border-effect",
   "version": "1.0.0",
-  "description": "组件描述",
+  "description": "SVG边框动画效果",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -60,10 +60,10 @@
     "last 2 versions"
   ],
   "info": {
-    "name": "template",
-    "title": "组件模板",
+    "name": "border-effect",
+    "title": "SVG边框动画效果",
     "tags": [
-      "其他"
+      "特效"
     ]
   }
 }

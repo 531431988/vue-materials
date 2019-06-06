@@ -1,14 +1,15 @@
 <template>
-  <div id="app">组件模板</div>
+  <div id="app">模板</div>
 </template>
 
 <script>
 export default {
+
 }
 </script>
 
 <style lang="less">
 #app {
-  margin: 5% 20%;
+  margin: 10% 20%;
 }
 </style>

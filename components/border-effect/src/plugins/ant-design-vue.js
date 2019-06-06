@@ -1,7 +1,12 @@
 import Vue from 'vue'
-import { Button } from 'ant-design-vue'
+import { Card, Avatar, Row, Col } from 'ant-design-vue'
+const { Meta } = Card
 const component = {
-  Button
+  Card,
+  Meta,
+  Avatar,
+  Row,
+  Col
 }
 Object.keys(component).forEach(key => {
   Vue.component(component[key].name, component[key])
