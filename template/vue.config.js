@@ -16,7 +16,7 @@ module.exports = {
     loaderOptions: {
       less: {
         modifyVars: {
-          'primary-color': '#1DA57A'
+          'primary-color': '#1890ff'
         },
         // 启用内联JavaScript
         javascriptEnabled: true
