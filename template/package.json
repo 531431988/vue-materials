@@ -1,7 +1,7 @@
 {
-  "name": "chip",
+  "name": "v-resize",
   "version": "1.0.0",
-  "description": "展示简洁的信息",
+  "description": "监听窗口变化",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -60,11 +60,11 @@
     "last 2 versions"
   ],
   "info": {
-    "name": "chip",
-    "title": "标签展示",
+    "name": "v-resize",
+    "title": "监听窗口变化",
     "tags": [
-      "插件",
-      "表单"
+      "其他",
+      "指令"
     ]
   }
 }
