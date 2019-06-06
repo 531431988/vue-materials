@@ -1,40 +1,45 @@
 <template>
   <div id="app">
-    <Card title="波纹效果">
-      <Button v-ripple>点击显示</Button>
-      <Button v-ripple.mouseover.500>移动显示</Button>
-      <Button type="primary" v-ripple="'rgba(255, 255, 255, 0.35)'">自定义颜色</Button>
+    <a-card title="波纹效果">
+      <a-row type="flex" justify="center" align="middle">
+        <a-col :span="6" v-ripple>
+          <img src="https://muse-ui.org/img/sun.a646a52d.jpg" width="100%">
+        </a-col>
+        <a-col :span="6" v-ripple>
+          <img src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" width="100%">
+        </a-col>
+      </a-row>
       <br>
       <br>
-      <div v-ripple style="display:inline-block">
-        <img src="https://muse-ui.org/img/sun.a646a52d.jpg" width="200">
-      </div>
-      <br>
-      <Card title="选项" icon="ios-options" :padding="0">
-        <CellGroup>
-          <Cell v-ripple title="标题和副标题" label="副标题说明"/>
-          <Cell v-ripple title="显示右侧内容" extra="详情"/>
-          <Cell title="禁用状态" disabled/>
-          <Cell v-ripple title="默认选中" selected/>
-          <Cell v-ripple title="右侧显示徽章效果">
-            <Badge :count="10" slot="extra"/>
-          </Cell>
-        </CellGroup>
-      </Card>
-    </Card>
+      <a-list itemLayout="horizontal">
+        <a-list-item v-ripple>
+          <a-list-item-meta description="一个基于v-ripple的点击波纹效果">
+            <div slot="title">默认效果</div>
+            <a-avatar
+              slot="avatar"
+              size="large"
+              src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+            />
+          </a-list-item-meta>
+        </a-list-item>
+        <a-list-item v-ripple="'rgba(255, 0, 0, 0.15)'">
+          <a-list-item-meta description="一个基于v-ripple的点击波纹效果">
+            <div slot="title">自定义颜色</div>
+            <a-avatar
+              slot="avatar"
+              size="large"
+              src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+            />
+          </a-list-item-meta>
+        </a-list-item>
+      </a-list>
+    </a-card>
   </div>
 </template>
 
 <script>
 export default {
-  components: {
-  },
-  data () {
-    return {
-    }
-  },
-  methods: {
-  }
+
 }
 </script>
 

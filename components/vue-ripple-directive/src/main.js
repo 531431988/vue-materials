@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
-import iView from 'iview'
+import './plugins/ant-design-vue'
 import Ripple from 'vue-ripple-directive'
-import './theme.less'
-Vue.use(iView)
 Ripple.color = 'rgba(0, 0, 0, 0.1)'
 Vue.directive('ripple', Ripple)
 Vue.config.productionTip = false
