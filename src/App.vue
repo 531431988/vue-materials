@@ -13,3 +13,7 @@ export default {
   }
 }
 </script>
+<style lang="less">
+@import "~iview/src/styles/index.less";
+@import "./theme.less";
+</style>
