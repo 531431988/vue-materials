@@ -4,7 +4,14 @@
       <h1>一个基于IVIEW UI框架的海量组件库</h1>
       <p class="mt10">快速组合搭建应用，减少重复的开发，提升效率</p>
     </div>
-    <Card shadow class="tags">
+    <Button
+      type="primary"
+      icon="md-menu"
+      @click="visible = true"
+      v-if="width < 768"
+      style="position:fixed; right: 16px;top:16px;z-index:99"
+    ></Button>
+    <Card shadow class="tags" v-else>
       <Button
         :type="item.checked ? 'primary' : 'dashed'"
         shape="circle"
@@ -50,6 +57,15 @@
         </Col>
       </Row>
     </div>
+    <Drawer placement="left" :closable="false" v-model="visible">
+      <Button
+        :type="item.checked ? 'primary' : 'dashed'"
+        v-for="(item, index) in tags"
+        :key="index"
+        @click="onClick(item, index)"
+        style="margin: 5px"
+      >{{item.label}} {{item.number}}</Button>
+    </Drawer>
     <BackTop></BackTop>
   </div>
 </template>
@@ -62,7 +78,9 @@ export default {
     return {
       allData: [],
       list: [],
-      tags: []
+      tags: [],
+      visible: false,
+      width: window.innerWidth
     }
   },
   created () {
@@ -118,6 +136,13 @@ export default {
       } else {
         this.list = this.allData
       }
+      this.visible = false
+    }
+  },
+  mounted () {
+    window.onresize = () => {
+      this.width = window.innerWidth
+      this.visible = false
     }
   }
 }
