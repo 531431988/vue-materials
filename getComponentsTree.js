@@ -15,7 +15,7 @@ function findFileBySuffix (dirs, fileName) {
     if (stat.isDirectory()) {
       files = files.concat(findFileBySuffix(filePath, fileName))
     }
-    if (stat.isFile() && path.extname(filePath) === fileName) {
+    if (stat.isFile() && path.basename(filePath) === fileName) {
       files.push(filePath)
     }
   }
@@ -32,7 +32,7 @@ const outPutFileJson = (url, data) => {
 
 // 循环读取json文件信息
 let componentsTree = []
-let url = findFileBySuffix('./components/', '.json')
+let url = findFileBySuffix('./components/', 'package.json')
 url.forEach(item => {
   fs.readFile(item, 'utf8', function (err, data) {
     if (err) console.log(err)
