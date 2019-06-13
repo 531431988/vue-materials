@@ -3,7 +3,7 @@ import './plugins/iview.js'
 import router from './router'
 import App from './App.vue'
 import api from '@/api/index'
-import './WMlib/WMlib.scss'
+import './WMlib.less'
 
 Vue.config.productionTip = false
 Vue.prototype.$get = api.$get
