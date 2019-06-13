@@ -1,78 +1,56 @@
 <template>
   <div>
     <div class="banner tc">
-      <h1>一个基于Ant Design框架的海量组件库</h1>
+      <h1>一个基于IVIEW UI框架的海量组件库</h1>
       <p class="mt10">快速组合搭建应用，减少重复的开发，提升效率</p>
     </div>
-    <a-button
-      type="primary"
-      icon="bars"
-      @click="visible  = true"
-      v-if="width < 768"
-      style="position:fixed; right: 16px;top:16px;z-index:99"
-    ></a-button>
-    <a-drawer
-      v-if="width < 768"
-      placement="left"
-      :closable="false"
-      :visible="visible"
-      @close="visible = false"
-    >
-      <a-button
+    <Card shadow class="tags">
+      <Button
         :type="item.checked ? 'primary' : 'dashed'"
+        shape="circle"
         v-for="(item, index) in tags"
         :key="index"
         @click="onClick(item, index)"
-      >{{item.label}} {{item.number}}</a-button>
-    </a-drawer>
-    <a-card class="tags" :bordered="false" v-else>
-      <a-button
-        :type="item.checked ? 'primary' : 'dashed'"
-        v-for="(item, index) in tags"
-        :key="index"
-        @click="onClick(item, index)"
-      >{{item.label}} {{item.number}}</a-button>
-    </a-card>
+      >{{item.label}} {{item.number}}</Button>
+    </Card>
     <div class="pd20">
-      <a-row type="flex" :gutter="24">
-        <a-col :xs="24" :sm="12" :md="8" :lg="6" v-for="(item, index) in list" :key="index">
-          <a-card class="list-card" hoverable :loading="loading" :bodyStyle="{padding: '10px'}">
-            <template slot="cover">
+      <Row :gutter="24">
+        <Col :xs="24" :sm="12" :md="8" :lg="6" v-for="(item, index) in list" :key="index">
+          <Card shadow class="list-card mb20" :padding="0">
+            <div class="tc">
               <img
                 width="100%"
                 style="height: 200px"
                 :src="`https://531431988.github.io/vue-component-library/components/${item.info.name}/thumbnail.png`"
               >
-              <a-divider/>
-            </template>
-            <div class="tc">
-              <div>{{item.info.title}}</div>
+              <Divider/>
+              <div class="pb10">{{item.info.title}}</div>
+              <svg xmlns="http://www.w3.org/2000/svg">
+                <line class="top" x1="100%" y1="0" x2="200%" y2="0"></line>
+                <line class="right" x1="100%" y1="100%" x2="100%" y2="200%"></line>
+                <line class="bottom" x1="0" y1="100%" x2="-100%" y2="100%"></line>
+                <line class="left" x1="0" y1="0" x2="0" y2="-100%"></line>
+              </svg>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg">
-              <line class="top" x1="100%" y1="0" x2="200%" y2="0"></line>
-              <line class="right" x1="100%" y1="100%" x2="100%" y2="200%"></line>
-              <line class="bottom" x1="0" y1="100%" x2="-100%" y2="100%"></line>
-              <line class="left" x1="0" y1="0" x2="0" y2="-100%"></line>
-            </svg>
             <div class="toolbar tc">
               <a
                 :href="`https://531431988.github.io/vue-component-library/components/${item.info.name}/dist/index.html`"
                 target="_blank"
               >
-                <a-button type="dashed" ghost class="mr20">预览</a-button>
+                <Button type="dashed" ghost class="mr20">预览</Button>
               </a>
               <a
                 :href="`https://github.com/531431988/vue-component-library/tree/master/components/${item.info.name}`"
                 target="_blank"
               >
-                <a-button type="primary">查看代码</a-button>
+                <Button type="primary">查看代码</Button>
               </a>
             </div>
-          </a-card>
-        </a-col>
-      </a-row>
+          </Card>
+        </Col>
+      </Row>
     </div>
-    <a-back-top/>
+    <BackTop></BackTop>
   </div>
 </template>
 
@@ -84,10 +62,7 @@ export default {
     return {
       allData: [],
       list: [],
-      tags: [],
-      loading: true,
-      visible: false,
-      width: window.innerWidth
+      tags: []
     }
   },
   created () {
@@ -124,7 +99,6 @@ export default {
         checked: true,
         number: this.allData.length
       })
-      this.loading = false
     })
   },
   methods: {
@@ -145,13 +119,7 @@ export default {
         this.list = this.allData
       }
     }
-  },
-  mounted () {
-    window.onresize = () => {
-      this.width = window.innerWidth
-    }
   }
-
 }
 </script>
 <style lang="less" scoped>
@@ -167,37 +135,30 @@ export default {
   margin-bottom: 24px;
   .toolbar {
     transition: all 0.3s;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
     padding: 10px 0;
     position: absolute;
     top: -100px;
     width: 100%;
     left: 0;
     right: 0;
-    a {
-      position: relative;
-      z-index: 10;
-    }
   }
   &:hover {
     .toolbar {
       top: 0;
     }
     svg line {
-      stroke: #1890ff;
+      stroke: @primary-color;
       transition-delay: 0.1s;
       &.top {
         transform: translateX(-100%);
       }
-
       &.bottom {
         transform: translateX(100%);
       }
-
       &.left {
         transform: translateY(100%);
       }
-
       &.right {
         transform: translateY(-100%);
       }
@@ -221,10 +182,9 @@ export default {
     }
   }
 }
-.tags,
-.ant-drawer {
+.tags {
   border-radius: 0;
-  .ant-btn {
+  .ivu-btn {
     margin-bottom: 10px;
     margin-right: 10px;
   }
@@ -232,8 +192,8 @@ export default {
 </style>
 <style lang="less">
 .list-card {
-  .ant-divider {
-    margin: 0;
+  .ivu-divider {
+    margin: 10px 0;
   }
 }
 </style>

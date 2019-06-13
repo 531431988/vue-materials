@@ -1,8 +1,8 @@
 import Vue from 'vue'
+import './plugins/iview.js'
 import router from './router'
 import App from './App.vue'
 import api from '@/api/index'
-import './plugins/ant-design-vue'
 import './WMlib.less'
 
 Vue.config.productionTip = false
