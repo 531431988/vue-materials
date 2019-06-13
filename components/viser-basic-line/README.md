@@ -1,6 +1,6 @@
 # viser-basic-line
 
-简介：基于 viser-vue 版本的基础折线图
+简介：基于 [viser-vue](https://viserjs.github.io/) 的基础折线图
 
 ---
 
