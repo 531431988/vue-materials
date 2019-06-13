@@ -23,37 +23,42 @@
     <div class="pd20">
       <Row :gutter="24">
         <Col :xs="24" :sm="12" :md="8" :lg="6" v-for="(item, index) in list" :key="index">
-          <Card shadow class="list-card mb20" :padding="0">
-            <div class="tc">
-              <img
-                width="100%"
-                style="height: 200px"
-                :src="`https://531431988.github.io/vue-component-library/components/${item.info.name}/thumbnail.png`"
-              >
-              <Divider/>
-              <div class="pb10">{{item.info.title}}</div>
-              <svg xmlns="http://www.w3.org/2000/svg">
-                <line class="top" x1="100%" y1="0" x2="200%" y2="0"></line>
-                <line class="right" x1="100%" y1="100%" x2="100%" y2="200%"></line>
-                <line class="bottom" x1="0" y1="100%" x2="-100%" y2="100%"></line>
-                <line class="left" x1="0" y1="0" x2="0" y2="-100%"></line>
-              </svg>
-            </div>
-            <div class="toolbar tc">
-              <a
-                :href="`https://531431988.github.io/vue-component-library/components/${item.info.name}/dist/index.html`"
-                target="_blank"
-              >
-                <Button type="dashed" ghost class="mr20">预览</Button>
-              </a>
-              <a
-                :href="`https://github.com/531431988/vue-component-library/tree/master/components/${item.info.name}`"
-                target="_blank"
-              >
-                <Button type="primary">查看代码</Button>
-              </a>
-            </div>
-          </Card>
+          <a
+            :href="`https://github.com/531431988/vue-component-library/tree/master/components/${item.info.name}`"
+            target="_blank"
+          >
+            <Card shadow class="list-card mb20" :padding="0">
+              <div class="tc">
+                <img
+                  width="100%"
+                  style="height: 200px"
+                  :src="`https://531431988.github.io/vue-component-library/components/${item.info.name}/thumbnail.png`"
+                >
+                <Divider/>
+                <div class="pb10">{{item.info.title}}</div>
+                <svg xmlns="http://www.w3.org/2000/svg">
+                  <line class="top" x1="100%" y1="0" x2="200%" y2="0"></line>
+                  <line class="right" x1="100%" y1="100%" x2="100%" y2="200%"></line>
+                  <line class="bottom" x1="0" y1="100%" x2="-100%" y2="100%"></line>
+                  <line class="left" x1="0" y1="0" x2="0" y2="-100%"></line>
+                </svg>
+              </div>
+              <div class="toolbar tc">
+                <a
+                  :href="`https://531431988.github.io/vue-component-library/components/${item.info.name}/dist/index.html`"
+                  target="_blank"
+                >
+                  <Button type="dashed" ghost class="mr20">预览</Button>
+                </a>
+                <a
+                  :href="`https://github.com/531431988/vue-component-library/tree/master/components/${item.info.name}`"
+                  target="_blank"
+                >
+                  <Button type="primary">查看代码</Button>
+                </a>
+              </div>
+            </Card>
+          </a>
         </Col>
       </Row>
     </div>
