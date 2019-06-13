@@ -1,7 +1,7 @@
 {
-  "name": "user-info-card",
+  "name": "viser-basic-line",
   "version": "1.0.0",
-  "description": "用于展示用户信息的卡片",
+  "description": "基于viser-vue版本的基础折线图",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -15,8 +15,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "core-js": "^2.6.5",
-    "countup": "^1.8.2",
     "iview": "^3.4.2",
+    "viser-vue": "^2.4.6",
     "vue": "^2.6.10"
   },
   "devDependencies": {
@@ -62,11 +62,10 @@
     "last 2 versions"
   ],
   "info": {
-    "name": "user-info-card",
-    "title": "用户信息卡片",
+    "name": "viser-basic-line",
+    "title": "viser-vue 基础折线图",
     "tags": [
-      "排版",
-      "列表"
+      "图表"
     ]
   }
 }
