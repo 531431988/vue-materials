@@ -1,7 +1,7 @@
-# 模版
+# viser-basic-line
 
-简介：
+简介：基于 viser-vue 版本的基础折线图
 
 ---
 
-![截图]()
+![截图](https://531431988.github.io/vue-component-library/components/viser-basic-line/thumbnail.png)
