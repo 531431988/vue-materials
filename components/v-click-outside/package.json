@@ -65,8 +65,7 @@
     "name": "v-click-outside",
     "title": "谁被点击了",
     "tags": [
-      "其他",
-      "指令"
+      "插件"
     ]
   }
 }

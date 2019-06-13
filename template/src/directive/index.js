@@ -1,7 +1,7 @@
-import shadow from './shadow'
+import resize from './resize'
 
 const importDirective = Vue => {
-  Vue.directive(shadow.name, shadow)
+  Vue.directive(resize.name, resize)
 }
 
 export default importDirective

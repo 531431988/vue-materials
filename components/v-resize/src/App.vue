@@ -1,34 +1,58 @@
 <template>
   <div id="app">
-    <Row :gutter="24">
-      <Col span="24">
-        <Card title="监听窗口变化">
-          <div v-resize="resize">
-            <Button>当前窗口宽: {{width}}px</Button>
-            <Button>当前窗口高: {{height}}px</Button>
-            <p>斯蒂夫·盖瑞·沃兹尼亚克（Stephen Gary Wozniak），美国电脑工程师，曾与史蒂夫·乔布斯合伙创立苹果电脑（今之苹果公司）。斯蒂夫·盖瑞·沃兹尼亚克曾就读于美国科罗拉多大学，后转学入美国著名高等学府加州大学伯克利分校（UC Berkeley）并获得电机工程及计算机（EECS）本科学位（1987年）。</p>
-          </div>
-        </Card>
-      </Col>
-    </Row>
+    <Layout>
+      <Header style="padding: 0 15px">
+        <div class="layout-logo">logo</div>
+        <Button
+          type="primary"
+          icon="md-menu"
+          v-if="width < 768"
+          @click="onShow"
+          style="float:right;margin-top:15px"
+        ></Button>
+        <div class="layout-nav" v-else>
+          <Menu mode="horizontal" theme="dark">
+            <MenuItem name="1">nav 1</MenuItem>
+            <MenuItem name="2">nav 2</MenuItem>
+            <MenuItem name="3">nav 3</MenuItem>
+            <MenuItem name="4">nav 4</MenuItem>
+            <MenuItem name="5">nav 5</MenuItem>
+          </Menu>
+        </div>
+      </Header>
+      <Content style="padding:50px">
+        <div v-resize="resize">
+          <p>缩小窗口试试</p>
+          <p>当前窗口宽: {{width}}px</p>
+          <p>当前窗口高: {{height}}px</p>
+        </div>
+      </Content>
+    </Layout>
+    <Drawer placement="left" :closable="false" v-model="visible">
+      <Menu>
+        <MenuItem name="1">nav 1</MenuItem>
+        <MenuItem name="2">nav 2</MenuItem>
+      </Menu>
+    </Drawer>
   </div>
 </template>
 
 <script>
 export default {
-  components: {
-  },
   data () {
     return {
       width: 0,
-      height: 0
+      height: 0,
+      visible: false
     }
   },
   methods: {
-    resize (e) {
-      console.log(e)
+    resize () {
       this.width = window.innerWidth
       this.height = window.innerHeight
+    },
+    onShow () {
+      this.visible = true
     }
   },
   mounted () {
@@ -40,6 +64,18 @@ export default {
 
 <style lang="less">
 #app {
-  margin: 10% 20%;
+  border: 1px solid #d7dde4;
+  background: #f5f7f9;
+  position: relative;
+  overflow: hidden;
+  .layout-logo {
+    width: 100px;
+    float: left;
+    color: #fff;
+  }
+  .layout-nav {
+    float: right;
+    margin: 0 auto;
+  }
 }
 </style>
