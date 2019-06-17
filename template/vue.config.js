@@ -60,11 +60,11 @@ module.exports = {
             to: './'
           },
           {
-            from: resolve('./thumbnail.png'),
+            from: resolve('./README.md'),
             to: './'
           },
           {
-            from: resolve('./README.md'),
+            from: resolve('./thumbnail.png'),
             to: './'
           }
         ])
