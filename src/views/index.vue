@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div class="banner tc">
-      <h1>一个基于IVIEW UI框架的海量组件库</h1>
-      <p class="mt10">快速组合搭建应用，减少重复的开发，提升效率</p>
-    </div>
+    <Banner @on-change="onSearch" ref="banner"/>
     <Button
       type="primary"
       icon="md-menu"
@@ -11,56 +8,16 @@
       v-if="width < 768"
       style="position:fixed; right: 16px;top:16px;z-index:99"
     ></Button>
-    <Card shadow class="tags" v-else>
-      <Button
-        :type="item.checked ? 'primary' : 'dashed'"
-        shape="circle"
-        v-for="(item, index) in tags"
-        :key="index"
-        @click="onClick(item, index)"
-      >{{item.label}} {{item.number}}</Button>
-    </Card>
+    <tag-list :data="tags" @on-click="onClick" v-else/>
     <div class="pd20">
-      <Row :gutter="24">
+      <Row :gutter="24" v-if="list.length">
         <Col :xs="24" :sm="12" :md="8" :lg="6" v-for="(item, index) in list" :key="index">
-          <a
-            :href="`https://github.com/531431988/vue-component-library/tree/master/components/${item.info.name}`"
-            target="_blank"
-          >
-            <Card shadow class="list-card mb20" :padding="0">
-              <div class="tc">
-                <img
-                  width="100%"
-                  style="height: 200px"
-                  :src="`https://531431988.github.io/vue-component-library/components/${item.info.name}/thumbnail.png`"
-                >
-                <Divider/>
-                <div class="pb10">{{item.info.title}}</div>
-                <svg xmlns="http://www.w3.org/2000/svg">
-                  <line class="top" x1="100%" y1="0" x2="200%" y2="0"></line>
-                  <line class="right" x1="100%" y1="100%" x2="100%" y2="200%"></line>
-                  <line class="bottom" x1="0" y1="100%" x2="-100%" y2="100%"></line>
-                  <line class="left" x1="0" y1="0" x2="0" y2="-100%"></line>
-                </svg>
-              </div>
-              <div class="toolbar tc">
-                <a
-                  :href="`https://531431988.github.io/vue-component-library/components/${item.info.name}/dist/index.html`"
-                  target="_blank"
-                >
-                  <Button type="dashed" ghost class="mr20">预览</Button>
-                </a>
-                <a
-                  :href="`https://github.com/531431988/vue-component-library/tree/master/components/${item.info.name}`"
-                  target="_blank"
-                >
-                  <Button type="primary">查看代码</Button>
-                </a>
-              </div>
-            </Card>
-          </a>
+          <card-list :data="item"></card-list>
         </Col>
       </Row>
+      <div class="pt50" v-else style="min-height: 300px">
+        <Empty title="暂无数据"/>
+      </div>
     </div>
     <Drawer placement="left" :closable="false" v-model="visible">
       <Button
@@ -76,8 +33,16 @@
 </template>
 
 <script>
+import Banner from '_c/Banner'
+import TagList from '_c/TagList'
+import CardList from '_c/CardList'
+import Empty from '_c/Empty'
 export default {
   components: {
+    Banner,
+    TagList,
+    CardList,
+    Empty
   },
   data () {
     return {
@@ -127,6 +92,7 @@ export default {
   methods: {
     // 筛选数据
     onClick (item, index) {
+      this.$refs.banner.keyword = ''
       this.tags.map(child => {
         child.checked = false
       })
@@ -142,6 +108,14 @@ export default {
         this.list = this.allData
       }
       this.visible = false
+    },
+    onSearch (keyword) {
+      this.list = []
+      this.allData.forEach(item => {
+        if (item.info.title.indexOf(keyword) !== -1) {
+          this.list.push(item)
+        }
+      })
     }
   },
   mounted () {
@@ -153,79 +127,3 @@ export default {
 
 }
 </script>
-<style lang="less" scoped>
-.banner {
-  padding: 100px 0;
-  background: url(../assets/banner.svg) center no-repeat #fff;
-  background-size: cover;
-}
-.list-card {
-  overflow: hidden;
-  border-radius: 0;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 24px;
-  .toolbar {
-    transition: all 0.3s;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px 0;
-    position: absolute;
-    top: -100px;
-    width: 100%;
-    left: 0;
-    right: 0;
-    z-index: 9;
-  }
-  &:hover {
-    .toolbar {
-      top: 0;
-    }
-    svg line {
-      stroke: @primary-color;
-      transition-delay: 0.1s;
-      &.top {
-        transform: translateX(-100%);
-      }
-      &.bottom {
-        transform: translateX(100%);
-      }
-      &.left {
-        transform: translateY(100%);
-      }
-      &.right {
-        transform: translateY(-100%);
-      }
-    }
-  }
-  svg {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9;
-    line {
-      stroke-width: 4;
-      stroke: @primary-color;
-      fill: none;
-      transition: all 0.8s ease-in-out;
-      stroke-dasharray: 9999;
-    }
-  }
-}
-.tags {
-  border-radius: 0;
-  .ivu-btn {
-    margin-bottom: 10px;
-    margin-right: 10px;
-  }
-}
-</style>
-<style lang="less">
-.list-card {
-  .ivu-divider {
-    margin: 10px 0;
-  }
-}
-</style>
