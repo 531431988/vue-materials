@@ -1,6 +1,6 @@
 <template>
   <Row class="banner tc" type="flex" justify="center">
-    <Col span="6">
+    <Col :xs="20" :sm="18" :md="12" :xxl="6">
       <Input
         v-model="keyword"
         search
