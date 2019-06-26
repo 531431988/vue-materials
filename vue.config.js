@@ -77,8 +77,6 @@ module.exports = {
           analyzerMode: 'static'
         }
       ])
-      // 利用splitChunks单独打包第三方模块
-      config.optimization.delete('splitChunks')
     }
     return config
   },
@@ -121,29 +119,8 @@ module.exports = {
       // config.externals = {
       //   vue: 'Vue'
       // }
-
-      // 利用splitChunks单独打包第三方模块
-      config.optimization = {
-        splitChunks: {
-          cacheGroups: {
-            libs: {
-              name: 'chunk-libs',
-              test: /[\\/]node_modules[\\/]/,
-              priority: 10,
-              chunks: 'initial'
-            },
-            iviewUI: {
-              name: 'chunk-iviewUI',
-              priority: 20,
-              test: /[\\/]node_modules[\\/]element-ui[\\/]/,
-              chunks: 'all'
-            }
-          }
-        }
-      }
     }
   },
-
   css: {
     // 为预处理器的 loader 传递自定义选项。比如传递给 sass-loader 时，使用 `{ sass: { ... } }`。
     loaderOptions: {
@@ -162,8 +139,9 @@ module.exports = {
   },
   // LESS scss全局变量
   pluginOptions: {
+    // 'less scss'
     'style-resources-loader': {
-      preProcessor: 'less', // 'less scss'
+      preProcessor: 'less',
       patterns: [resolve('./src/theme.less')]
     }
   }
