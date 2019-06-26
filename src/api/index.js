@@ -1,8 +1,5 @@
 import axios from 'axios'
-import config from '../config'
 import { Notice, LoadingBar } from 'iview'
-
-const baseUrl = process.env.NODE_ENV === 'development' ? config.url.dev : config.url.pro
 const codeMessage = {
   200: '服务器成功返回请求的数据。',
   201: '新建或修改数据成功。',
@@ -80,7 +77,7 @@ const filterUrl = (url = '') => {
   if (/^(https:)\S*$/.test(url) || /^(\/\/)\S*$/.test(url)) {
     return url
   } else {
-    return baseUrl + url
+    return process.env.VUE_APP_BASE_API + url
   }
 }
 

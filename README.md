@@ -14,16 +14,19 @@
 ### 文件结构
 
 ```shell
-├── components      组件库
-├── public          打包所需静态资源
-├── template        组件开发模版文件
+├── components         组件库
+├── public             打包所需静态资源
+├── template           组件开发模版文件
 └── src
-    ├── api         AJAX请求
-    └── assets      项目静态资源
-        ├── icons   自定义图标资源
-        └── images  图片资源
-    ├── components  业务组件
-    ├── mock        mock模拟数据
-    ├── router      路由配置
-    ├── views       页面文件
+    ├── api            AJAX请求
+    └── assets         项目静态资源
+        ├── icons      自定义图标资源
+        └── images     图片资源
+    ├── components     业务组件
+    ├── mock           mock模拟数据
+    ├── router         路由配置
+    ├── views          页面文件
+└── .env               在所有的环境中被载入
+└── .env.development   只development模式中被载入
+└── .env.production    只production模式中被载入
 ```
