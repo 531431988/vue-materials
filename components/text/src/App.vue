@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <a-row :gutter="24">
-      <a-col span="12" class="mb10">
-        <a-card title="行内文本样式">
+    <Row :gutter="24">
+      <Col span="12" class="mb10">
+        <Card title="行内文本样式">
           <v-text>默认文字颜色</v-text>
           <br>
           <v-text type="primary">主要文字颜色</v-text>&emsp;
@@ -28,10 +28,10 @@
           <br>
           <v-text del>删除文字效果</v-text>&emsp;
           <v-text del type="error">组合使用</v-text>
-        </a-card>
-      </a-col>
-      <a-col span="12">
-        <a-card title="段落文本样式 及 组合样式">
+        </Card>
+      </Col>
+      <Col span="12">
+        <Card title="段落文本样式 及 组合样式">
           <v-text :inline="false">
             <v-text type="error">史蒂夫·乔布斯</v-text>（Steve Jobs），1955年2月24日生于美国加利福尼亚州旧金山，美国发明家、企业家、美国苹果公司联合创办人。
           </v-text>
@@ -47,9 +47,9 @@
             <v-text mark="#ffe58f">美国电脑工程师</v-text>，曾与史蒂夫·乔布斯合伙创立苹果电脑（今之苹果公司）。斯蒂夫·盖瑞·沃兹尼亚克曾就读于美国科罗拉多大学，后转学入美国著名高等学府加州大学伯克利分校（UC Berkeley）并获得电机工程及计算机（EECS）本科学位
             （1987年）。
           </v-text>
-        </a-card>
-      </a-col>
-    </a-row>
+        </Card>
+      </Col>
+    </Row>
   </div>
 </template>
 

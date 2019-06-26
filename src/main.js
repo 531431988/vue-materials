@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import '@babel/polyfill'
 import './plugins/iview.js'
 import router from './router'
 import App from './App.vue'

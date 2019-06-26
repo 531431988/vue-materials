@@ -26,11 +26,6 @@
           <p>当前窗口宽: {{width}}px</p>
           <p>当前窗口高: {{height}}px</p>
         </div>
-<<<<<<< HEAD
-      </a-layout-content>
-    </a-layout>
-  </a-layout-content>
-=======
       </Content>
     </Layout>
     <Drawer placement="left" :closable="false" v-model="visible">
@@ -40,7 +35,6 @@
       </Menu>
     </Drawer>
   </div>
->>>>>>> iview
 </template>
 
 <script>
@@ -59,12 +53,6 @@ export default {
     },
     onShow () {
       this.visible = true
-<<<<<<< HEAD
-    },
-    onClose () {
-      this.visible = false
-=======
->>>>>>> iview
     }
   },
   mounted () {
@@ -76,10 +64,6 @@ export default {
 
 <style lang="less">
 #app {
-<<<<<<< HEAD
-  .ant-menu-vertical {
-    border-right: none;
-=======
   border: 1px solid #d7dde4;
   background: #f5f7f9;
   position: relative;
@@ -92,7 +76,6 @@ export default {
   .layout-nav {
     float: right;
     margin: 0 auto;
->>>>>>> iview
   }
 }
 </style>

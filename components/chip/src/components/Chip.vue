@@ -3,7 +3,8 @@
     <slot name="avatar"></slot>
     <slot></slot>
     <span class="vui-chip-delete" v-if="$slots.icon">
-      <slot name="icon"></slot>
+      <slot name="icon">
+      </slot>
     </span>
   </div>
 </template>
@@ -47,26 +48,26 @@ export default {
   display: inline-flex;
   vertical-align: middle;
   align-items: center;
-  background-color: darken(@background-color-base, 5%);
+  background-color: darken(@background-color-base , 5%);
   color: rgba(0, 0, 0, 0.87);
   padding: 0 12px;
   outline: none;
   cursor: default;
-  .vui-chip-delete {
+  .vui-chip-delete{
     display: inline-block;
     vertical-align: middle;
     margin-right: -8px;
     margin-left: 4px;
-    transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all .45s cubic-bezier(.23,1,.32,1);
     cursor: pointer;
   }
-  &-default {
+  &-default{
     line-height: 32px;
-    &:hover {
-      background-color: darken(@background-color-base, 8%);
+    &:hover{
+      background-color: darken(@background-color-base , 8%)
     }
   }
-  .ant-avatar {
+  .ivu-avatar {
     margin-left: -13px;
     margin-right: 4px;
   }
@@ -74,37 +75,37 @@ export default {
   &-info,
   &-success,
   &-warning,
-  &-error {
+  &-error{
     color: #fff;
   }
-  &-primary {
-    background: @primary-color;
-    &:hover {
-      background: lighten(@primary-color, 10%);
+  &-primary{
+    background:@primary-color;
+    &:hover{
+    background:lighten(@primary-color, 10%)
     }
   }
-  &-info {
-    background: @info-color;
-    &:hover {
-      background: lighten(@info-color, 10%);
+  &-info{
+    background:@info-color;
+    &:hover{
+    background:lighten(@info-color,10%);
     }
   }
-  &-success {
-    background: @success-color;
-    &:hover {
-      background: lighten(@success-color, 10%);
+  &-success{
+    background:@success-color;
+    &:hover{
+      background:lighten(@success-color,10%)
     }
   }
-  &-warning {
-    background: @warning-color;
-    &:hover {
-      background: lighten(@warning-color, 10%);
+  &-warning{
+    background:@warning-color;
+    &:hover{
+      background:lighten(@warning-color,10%)
     }
   }
-  &-error {
-    background: @error-color;
-    &:hover {
-      background: lighten(@error-color, 10%);
+  &-error{
+    background:@error-color;
+    &:hover{
+      background:lighten(@error-color,10%)
     }
   }
 }

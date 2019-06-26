@@ -6,8 +6,8 @@
         <h4>{{ code }}</h4>
         <h5>{{ desc }}</h5>
       </div>
-      <a-button size="large" type="primary" @click="backHome" style="margin-right:10px">返回首页</a-button>
-      <a-button size="large" type="primary" ghost @click="backPrev">返回上一页 ({{ second }} s)</a-button>
+      <Button size="large" type="primary" @click="backHome" style="margin-right:10px">返回首页</Button>
+      <Button size="large" type="primary" ghost @click="backPrev">返回上一页 ({{ second }} s)</Button>
     </div>
   </div>
 </template>

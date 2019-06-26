@@ -1,24 +1,24 @@
 <template>
   <div id="app">
     <div class="card-download">
-      <a-row :gutter="24">
-        <a-col :span="8">
-          <a-card :bordered="false" class="windows">
+      <Row :gutter="24">
+        <Col :span="8">
+          <Card :bordered="false" :padding="30" class="windows">
             <div class="icon">
-              <a-icon theme="filled" type="windows"/>
+              <Icon type="logo-windows" size="96"/>
             </div>
             <h4 class="name">Windows版</h4>
             <p class="version">版本2.3.2 2019-06-12</p>
-            <a-button size="large" type="primary">下载</a-button>
+            <Button size="large" type="primary">下载</Button>
             <p class="log">
               <a>更新日志</a>
             </p>
-          </a-card>
-        </a-col>
-        <a-col :span="8">
-          <a-card :bordered="false" class="apple">
+          </Card>
+        </Col>
+        <Col :span="8">
+          <Card :bordered="false" :padding="30" class="apple">
             <div class="icon">
-              <a-icon theme="filled" type="apple"/>
+              <Icon type="logo-apple" size="112"/>
               <img
                 class="qrcode"
                 src="http://qd.myapp.com/myapp/qqteam/TIM_WEB/img/TIM_PC/iphone-hover2x.png"
@@ -26,17 +26,17 @@
             </div>
             <h4 class="name">Windows版</h4>
             <p class="version">版本2.3.2 2019-06-12</p>
-            <a-button size="large" type="primary">下载</a-button>
+            <Button size="large" type="primary">下载</Button>
             <p class="tip">请用手机扫码下载</p>
             <p class="log">
               <a>更新日志</a>
             </p>
-          </a-card>
-        </a-col>
-        <a-col :span="8">
-          <a-card :bordered="false" class="android">
+          </Card>
+        </Col>
+        <Col :span="8">
+          <Card :bordered="false" :padding="30" class="android">
             <div class="icon">
-              <a-icon theme="filled" type="android"/>
+              <Icon type="logo-android" size="112"/>
               <img
                 class="qrcode"
                 src="http://qd.myapp.com/myapp/qqteam/TIM_WEB/img/TIM_PC/iphone-hover2x.png"
@@ -44,14 +44,14 @@
             </div>
             <h4 class="name">Windows版</h4>
             <p class="version">版本2.3.2 2019-06-12</p>
-            <a-button size="large" type="primary">下载</a-button>
+            <Button size="large" type="primary">下载</Button>
             <p class="tip">请用手机扫码下载</p>
             <p class="log">
               <a>更新日志</a>
             </p>
-          </a-card>
-        </a-col>
-      </a-row>
+          </Card>
+        </Col>
+      </Row>
     </div>
   </div>
 </template>
@@ -83,7 +83,7 @@ export default {
   text-align: center;
   overflow: hidden;
   padding: 30px 0;
-  .ant-card {
+  .ivu-card {
     &:hover {
       box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.12);
     }
@@ -93,8 +93,7 @@ export default {
       background: url(//qd.myapp.com/myapp/qqteam/TIM_WEB/img/TIM_PC/01.png)
         no-repeat center 0;
       background-size: cover;
-
-      .icon .anticon {
+      .icon .ivu-icon {
         transform: translateY(20px);
         color: @primary-color;
       }
@@ -117,21 +116,24 @@ export default {
 
   .apple,
   .android {
+    .ivu-icon {
+      margin-bottom: -16px;
+    }
     .tip {
       font-size: 18px;
-      margin: 36px 0 25px;
+      margin: 28px 0 25px;
       display: none;
     }
     &:hover {
-      .icon .anticon {
+      .icon .ivu-icon {
         display: none;
       }
       .qrcode {
         opacity: 1;
-        transform: translateY(20px);
+        transform: translateY(16px);
         height: 96px;
       }
-      .ant-btn {
+      .ivu-btn {
         display: none;
       }
       .tip {
@@ -139,14 +141,10 @@ export default {
       }
     }
   }
-  .ant-card-body {
-    padding: 50px 24px;
-  }
   .icon {
     margin-bottom: 50px;
-    .anticon {
+    .ivu-icon {
       transition: all 0.3s;
-      font-size: 96px;
     }
     .qrcode {
       position: relative;
@@ -164,7 +162,7 @@ export default {
     font-size: 18px;
     margin-bottom: 20px;
   }
-  .ant-btn {
+  .ivu-btn {
     width: 120px;
     margin: 10px auto;
   }

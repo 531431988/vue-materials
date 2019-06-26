@@ -5,58 +5,58 @@
       <a href="https://github.com/inorganik/countUp.js">API请查看</a>
     </h3>
 
-    <a-row :gutter="14">
-      <a-col span="8">
-        <a-card title="count-up组件基础用法">
+    <Row :gutter="14">
+      <Col span="8">
+        <Card title="count-up组件基础用法">
           <count-up :end="2534.368" :decimals="2"/>
-        </a-card>
-      </a-col>
-      <a-col span="8">
-        <a-card title="可添加左右文字">
+        </Card>
+      </Col>
+      <Col span="8">
+        <Card title="可添加左右文字">
           <count-up :end="2534" :useGrouping="true">
             <span slot="left">总金额:&nbsp;</span>
             <span slot="right">&nbsp;元</span>
           </count-up>
-        </a-card>
-      </a-col>
-      <a-col span="8" class="padding-left-10">
-        <a-card title="自定义样式">
+        </Card>
+      </Col>
+      <Col span="8" class="padding-left-10">
+        <Card title="自定义样式">
           <count-up :end="2534" count-class="count-text" unit-class="unit-class">
             <span class="slot-text" slot="left">共计:&nbsp;</span>
             <span class="slot-text" slot="right">&nbsp;秒</span>
           </count-up>
-        </a-card>
-      </a-col>
-    </a-row>
-    <a-row :gutter="14" style="margin-top: 14px;">
-      <a-col span="8" class="padding-left-10">
-        <a-card title="设置数据格式">
+        </Card>
+      </Col>
+    </Row>
+    <Row :gutter="14" style="margin-top: 14px;">
+      <Col span="8" class="padding-left-10">
+        <Card title="设置数据格式">
           <count-up :end="2534" count-class="count-text" unit-class="unit-class" :decimals="2">
             <span class="slot-text" slot="left">Total:&nbsp;</span>
             <span class="slot-text" slot="right">&nbsp;times</span>
           </count-up>
-        </a-card>
-      </a-col>
-      <a-col span="8" class="padding-left-10">
-        <a-card title=" 可异步更新数据">
+        </Card>
+      </Col>
+      <Col span="8" class="padding-left-10">
+        <Card title=" 可异步更新数据">
           <count-up :end="asynEndVal" count-class="count-text" unit-class="unit-class">
             <span class="slot-text" slot="left">Total:&nbsp;</span>
             <span class="slot-text" slot="right">&nbsp;times</span>
           </count-up>
-        </a-card>
-      </a-col>
-      <a-col span="8">
-        <a-card title="转换单位简化数据">
+        </Card>
+      </Col>
+      <Col span="8">
+        <Card title="转换单位简化数据">
           <count-up :simplify="true" :end="2534" count-class="count-text" unit-class="unit-class">
             <span class="slot-text" slot="left">Total:&nbsp;</span>
             <span class="slot-text" slot="right">&nbsp;times</span>
           </count-up>
-        </a-card>
-      </a-col>
-    </a-row>
-    <a-row :gutter="14" style="margin-top: 14px;">
-      <a-col span="18" class="padding-left-10">
-        <a-card title="自定义单位">
+        </Card>
+      </Col>
+    </Row>
+    <Row :gutter="14" style="margin-top: 14px;">
+      <Col span="18" class="padding-left-10">
+        <Card title="自定义单位">
           <count-up
             :simplify="true"
             :unit="unit"
@@ -84,10 +84,10 @@
           >
             <span class="slot-text" slot="left">原始数据：257678&nbsp;=>&nbsp;</span>
           </count-up>
-        </a-card>
-      </a-col>
-      <a-col span="6">
-        <a-card title="综合实例">
+        </Card>
+      </Col>
+      <Col span="6">
+        <Card title="综合实例">
           <count-up
             :delay="500"
             :simplify="true"
@@ -99,9 +99,9 @@
             <span class="slot-text" slot="left">原始数据:&nbsp;{{ integratedEndVal }}&nbsp;=>&nbsp;</span>
             <span class="slot-text" slot="right">&nbsp;times</span>
           </count-up>
-        </a-card>
-      </a-col>
-    </a-row>
+        </Card>
+      </Col>
+    </Row>
   </div>
 </template>
 

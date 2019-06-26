@@ -21,9 +21,8 @@ module.exports = {
     [
       'import',
       {
-        libraryName: 'ant-design-vue',
-        libraryDirectory: 'es',
-        style: true
+        libraryName: 'iview',
+        libraryDirectory: 'src/components'
       }
     ]
   ]

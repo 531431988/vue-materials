@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <a-row type="flex">
-      <a-col span="16">
+    <Row type="flex">
+      <Col span="16">
         <div class="vui-login-left">
           <div
             style="display: flex; flex-direction: column; align-items: center; position: relative; z-index: 3;"
@@ -11,48 +11,39 @@
           </div>
           <div class="mask"></div>
         </div>
-      </a-col>
-      <a-col span="8">
+      </Col>
+      <Col span="8">
         <div class="vui-login-right">
-          <a-form class="login-form" :form="form" @submit="handleSubmit" style="width: 50%;">
+          <Form ref="formInline" :model="formInline" :rules="ruleInline" style="width: 50%;">
             <h4 class="title">用户登录</h4>
-            <a-form-item>
-              <a-input
-                type="text"
-                placeholder="请输入用户名"
-                size="large"
-                v-decorator="ruleInline.username"
-              >
-                <a-icon type="user" slot="prefix"/>
-              </a-input>
-            </a-form-item>
-            <a-form-item>
-              <a-input
-                v-decorator="ruleInline.password"
-                type="password"
-                placeholder="请输入密码"
-                size="large"
-              >
-                <a-icon type="lock" slot="prefix"/>
-              </a-input>
-            </a-form-item>
-            <a-form-item style="text-align:center">
-              <a-button
+            <FormItem prop="user">
+              <Input type="text" v-model="formInline.user" placeholder="请输入用户名" size="large">
+                <Icon type="ios-person-outline" slot="prepend"></Icon>
+              </Input>
+            </FormItem>
+            <FormItem prop="password">
+              <Input type="password" v-model="formInline.password" placeholder="请输入密码" size="large">
+                <Icon type="ios-lock-outline" slot="prepend"></Icon>
+              </Input>
+            </FormItem>
+            <FormItem style="text-align:center">
+              <Button
                 type="primary"
+                shape="circle"
                 long
+                @click="handleSubmit('formInline')"
                 size="large"
-                html-type="submit"
                 class="vui-login-button"
-              >登录</a-button>
+              >登录</Button>
               <div>
                 <a href="#" style="margin-right:15px">立即注册</a>
                 <a href="#">找回密码</a>
               </div>
-            </a-form-item>
-          </a-form>
+            </FormItem>
+          </Form>
         </div>
-      </a-col>
-    </a-row>
+      </Col>
+    </Row>
   </div>
 </template>
 
@@ -62,38 +53,28 @@ export default {
   },
   data () {
     return {
+      formInline: {
+        user: '',
+        password: ''
+      },
       ruleInline: {
-        username: [
-          'username',
-          {
-            validateTrigger: ['change', 'blur'],
-            rules: [{ required: true, whitespace: true, message: '请输入用户名' }]
-          }
+        user: [
+          { required: true, message: '请输入用户名', trigger: 'blur' }
         ],
         password: [
-          'password',
-          {
-            validateTrigger: ['change', 'blur'],
-            rules: [
-              { required: true, message: '请输入密码' },
-              { type: 'string', min: 6, message: '密码最少为6位' }
-            ]
-          }
+          { required: true, message: '请输入密码', trigger: 'blur' },
+          { type: 'string', min: 6, message: '密码最少为6位', trigger: 'blur' }
         ]
       }
     }
   },
-  beforeCreate () {
-    this.form = this.$form.createForm(this)
-  },
   methods: {
-    handleSubmit (e) {
-      e.preventDefault()
-      this.form.validateFields((err, values) => {
-        if (!err) {
-          this.$message.success('验证成功')
+    handleSubmit (name) {
+      this.$refs[name].validate((valid) => {
+        if (valid) {
+          this.$Message.success('验证成功')
         } else {
-          this.$message.error('验证失败')
+          this.$Message.error('验证失败')
         }
       })
     }

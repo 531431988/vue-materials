@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <a-card title="基础用法">
+    <Card title="基础用法">
       <vueCountdown :time="60000" :interval="100" tag="div">
         <template
           slot-scope="props"
@@ -18,10 +18,10 @@
           slot-scope="props"
         >距离圣诞节: 共 {{ props.totalDays }} 天 / 共 {{ props.totalHours }} 小时 / 共 {{ props.totalMinutes }} 分钟 / 共 {{ props.totalSeconds }} 秒 / 共 {{ props.totalMilliseconds }} 毫秒</template>
       </vueCountdown>
-    </a-card>
+    </Card>
     <br>
     <br>
-    <a-card title="扩展应用">
+    <Card title="扩展应用">
       <vueCountdown :time="time" :interval="1000" tag="div">
         <template slot-scope="props">
           距离过年：
@@ -32,13 +32,13 @@
         </template>
       </vueCountdown>
       <br>
-      <a-button type="primary" :disabled="disabled" @click="onStart">
+      <Button type="primary" :disabled="disabled" @click="onStart">
         <vueCountdown v-if="disabled" :time="6000" @end="onEnd">
           <template slot-scope="props">重新发送验证码 {{ props.totalSeconds }}</template>
         </vueCountdown>
         <span v-else>发送验证码</span>
-      </a-button>
-    </a-card>
+      </Button>
+    </Card>
   </div>
 </template>
 

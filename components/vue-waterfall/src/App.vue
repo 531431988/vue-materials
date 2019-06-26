@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <a-affix :offsetTop="0">
-      <a-button type="primary" @click="line = 'v'">垂直</a-button>
-      <a-button type="primary" @click="line = 'h'">水平</a-button>
-    </a-affix>
+    <Affix :offset-top="0">
+      <Button type="primary" @click="line = 'v'">垂直</Button>
+      <Button type="primary" @click="line = 'h'">水平</Button>
+    </Affix>
     <waterfall
       :grow="grow"
       :line="line"

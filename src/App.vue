@@ -12,4 +12,8 @@ export default {
 <style lang="less">
 @import "~iview/src/styles/index.less";
 @import "./theme.less";
+html,
+body {
+  background: #f5f7f9;
+}
 </style>

@@ -4,17 +4,11 @@
 
 <script>
 export default {
-  components: {
-  },
-  data () {
-  },
-  methods: {
-  }
-
 }
 </script>
 
-<style lang="less">
-@import "~iview/src/styles/index.less";
-@import "./theme.less";
+<style>
+#app {
+  padding: 5% 20%;
+}
 </style>

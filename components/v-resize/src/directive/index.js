@@ -1,8 +1,7 @@
-import Vue from 'vue'
 import resize from './resize'
 
-const importDirective = () => {
+const importDirective = Vue => {
   Vue.directive(resize.name, resize)
 }
 
-importDirective()
+export default importDirective

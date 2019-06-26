@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <a-card title="dplayer">
+    <Card title="dplayer">
       <d-player :options="options" @play="play" ref="player"></d-player>
-      <a-button slot="extra" type="primary" @click="onSwitch">切换视频</a-button>
-    </a-card>
+      <Button slot="extra" type="primary" @click="onSwitch">切换视频</Button>
+    </Card>
   </div>
 </template>
 

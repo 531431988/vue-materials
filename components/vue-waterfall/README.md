@@ -1,7 +1,7 @@
-# [vue-waterfall](https://github.com/MopTym/vue-waterfall)
+# vue-fullscreen
 
-简介：瀑布流。
+简介： 全屏[API](https://github.com/mirari/vue-fullscreen)。
 
 ---
 
-![截图](https://531431988.github.io/vue-component-library/components/vue-waterfall/thumbnail.png)
+![截图](https://531431988.github.io/vue-component-library/components/vue-fullscreen/thumbnail.png)
