@@ -1,6 +1,4 @@
 const path = require('path')
-const glob = require('glob-all')
-const PurgecssPlugin = require('purgecss-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const productionGzipExtensions = /\.(js|css|json|txt|html|ico|svg)(\?.*)?$/i
@@ -28,7 +26,7 @@ module.exports = {
     // hotOnly: false,
     proxy: {
       '/api': {
-        target: process.env.VUE_APP_BASE_API || 'http://127.0.0.1:8080',
+        target: process.env.VUE_APP_BASE_API,
         changeOrigin: true
       }
     }
@@ -77,6 +75,8 @@ module.exports = {
           analyzerMode: 'static'
         }
       ])
+      // 利用splitChunks单独打包第三方模块
+      config.optimization.delete('splitChunks')
     }
     return config
   },
@@ -84,26 +84,6 @@ module.exports = {
   configureWebpack: config => {
     if (IS_PROD) {
       const plugins = []
-      // 去除多余无效的 css
-      plugins.push(
-        new PurgecssPlugin({
-          paths: glob.sync([resolve('./**/*.vue')]),
-          extractors: [
-            {
-              extractor: class Extractor {
-                static extract (content) {
-                  const validSection = content.replace(/<style([\s\S]*?)<\/style>+/gim, '')
-                  return validSection.match(/[A-Za-z0-9-_:/]+/g) || []
-                }
-              },
-              extensions: ['html', 'vue']
-            }
-          ],
-          whitelist: ['html', 'body'],
-          whitelistPatterns: [/el-.*/],
-          whitelistPatternsChildren: [/^token/, /^pre/, /^code/]
-        })
-      )
       // 开启 gzip 压缩
       plugins.push(
         new CompressionWebpackPlugin({
@@ -119,8 +99,29 @@ module.exports = {
       // config.externals = {
       //   vue: 'Vue'
       // }
+
+      // 利用splitChunks单独打包第三方模块
+      config.optimization = {
+        splitChunks: {
+          cacheGroups: {
+            libs: {
+              name: 'chunk-libs',
+              test: /[\\/]node_modules[\\/]/,
+              priority: 10,
+              chunks: 'initial'
+            },
+            iviewUI: {
+              name: 'chunk-iviewUI',
+              priority: 20,
+              test: /[\\/]node_modules[\\/]element-ui[\\/]/,
+              chunks: 'all'
+            }
+          }
+        }
+      }
     }
   },
+
   css: {
     // 为预处理器的 loader 传递自定义选项。比如传递给 sass-loader 时，使用 `{ sass: { ... } }`。
     loaderOptions: {
@@ -139,9 +140,8 @@ module.exports = {
   },
   // LESS scss全局变量
   pluginOptions: {
-    // 'less scss'
     'style-resources-loader': {
-      preProcessor: 'less',
+      preProcessor: 'less', // 'less scss'
       patterns: [resolve('./src/theme.less')]
     }
   }
